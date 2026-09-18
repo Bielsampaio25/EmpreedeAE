@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
 
+*{
+    padding: 0;
+    margin: 0;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -27,6 +32,7 @@
     display: flex;
     gap: 30px;
     font-family: "Manrope", sans-serif;
+    font-size: 20px;
 }
 
 .nav-itens li:hover{
@@ -42,8 +48,8 @@
     background-color: #2563eb;
     border: none;
     border-radius: 5px;
-    width: 125px;
-    height: 35px;
+    width: 156px;
+    height: 50px;
     color: white;
     box-shadow: 0 8px 18px #2563eb33;
     transition: 0.3s ease;
@@ -98,4 +104,66 @@
 .apresentacao-animacao video{
     width: 690px;
     height: 630px;
+}
+
+.carrousel-recursos {
+    background-color: #f4f6fb;
+    display: flex;
+    width: 100%;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.carrousel-recursos-animacao {
+    display: flex;
+    width: max-content;
+    animation: carrousel-infinito 20s linear infinite;
+}
+
+.carrousel-recursos-grupo {
+    width: 100vw;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.carrousel-recursos-item {
+    height: 107px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrousel-recursos-item h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 25px;
+    margin: 0;
+}
+
+.carrousel-recursos-item p {
+    font-family: "Manrope", sans-serif;
+    color: #8b96a9;
+    margin: 5px 0 0;
+}
+
+.carrousel-recursos-grupo hr {
+    width: 1px;
+    height: 35px;
+    border: none;
+    background-color: #dce2ed;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+@keyframes carrousel-infinito {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100vw);
+    }
 }
