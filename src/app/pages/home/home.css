@@ -313,6 +313,324 @@
     transform: translateY(-3px);
 }
 
+.planos {
+    width: 100%;
+    padding: 110px 0 120px;
+    background-color: #f8f9fc;
+}
+
+.planos-titulo {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.planos-titulo h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 48px;
+    color: #14213d;
+    margin-bottom: 15px;
+}
+
+.planos-titulo p {
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    color: #8b96a9;
+}
+
+.planos-container {
+    width: 94%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.plano-card {
+    position: relative;
+    background-color: white;
+    border: 1px solid #dfe5ef;
+    border-radius: 15px;
+    padding: 32px;
+    min-height: 490px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+.plano-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20, 33, 61, 0.08);
+}
+
+.plano-destaque {
+    border: 1.5px solid #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+.plano-badge {
+    position: absolute;
+    top: -1px;
+    right: 30px;
+    background-color: #2563eb;
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 15px;
+    border-radius: 0 0 6px 6px;
+}
+
+.plano-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.plano-topo h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 17px;
+    color: #43516a;
+}
+
+.plano-icone {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+}
+
+.plano-icone span {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.plano-icone.gratuito {
+    background-color: #edf3ff;
+    color: #2563eb;
+}
+
+.plano-icone.profissional {
+    background-color: #f0eaff;
+    color: #7c3aed;
+}
+
+.plano-icone.negocio {
+    background-color: #fff0e9;
+    color: #ff7434;
+}
+
+.plano-preco {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.plano-preco strong {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 46px;
+    color: #14213d;
+    letter-spacing: -2px;
+}
+
+.plano-preco span {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    color: #8b96a9;
+    margin-left: 4px;
+}
+
+.plano-descricao {
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    color: #8b96a9;
+    margin-bottom: 28px;
+}
+
+.plano-btn {
+    width: 100%;
+    height: 53px;
+    background-color: white;
+    border: 1px solid #dce2ed;
+    border-radius: 9px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #14213d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.3s ease;
+}
+
+.plano-btn span {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.plano-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.plano-btn-destaque {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.20);
+}
+
+.plano-btn-destaque:hover {
+    background-color: #457ef8;
+    border-color: #457ef8;
+    color: white;
+}
+
+.plano-divisor {
+    width: 100%;
+    height: 1px;
+    background-color: #dfe5ef;
+    margin: 28px 0 32px;
+}
+
+.plano-card h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #43516a;
+    margin-bottom: 25px;
+}
+
+.plano-beneficios {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    padding: 0;
+    margin: 0;
+}
+
+.plano-beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    color: #36b37e;
+}
+
+.plano-beneficios li span {
+    color: #8b96a9;
+}
+
+.footer {
+    width: 100%;
+    background-color: #ffffff;
+    font-family: "Manrope", sans-serif;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 0.8fr;
+    gap: 60px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.footer-logo h2 {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #14213d;
+}
+
+.footer-brand > p {
+    margin-top: 18px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #94a0b4;
+}
+
+.footer-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-coluna h3 {
+    margin: 0 0 6px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #14213d;
+}
+
+.footer-coluna a {
+    width: fit-content;
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    color: #94a0b4;
+    transition: 0.25s ease;
+}
+
+.footer-coluna a:hover {
+    color: #2563eb;
+    transform: translateX(2px);
+}
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1290px;
+    margin: 0 auto;
+    border-top: 1px solid #e5e9f0;
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    color: #94a0b4;
+}
+
+.footer-bottom span {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    color: #94a0b4;
+}
+
 @keyframes carrousel-infinito {
     from {
         transform: translateX(0);
@@ -321,4 +639,43 @@
     to {
         transform: translateX(-100vw);
     }
+}
+
+@media (max-width: 800px) {
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px 30px;
+
+        padding: 50px 0;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
 }
