@@ -101,9 +101,10 @@
     transform: translateY(-3px);
 }
 
-.apresentacao-animacao video{
+.apresentacao-animacao{
     width: 690px;
     height: 630px;
+    border: none;
 }
 
 .carrousel-recursos {
@@ -204,6 +205,112 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.diferencial{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 90px;
+    
+}
+
+.diferencial-info{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.diferencial-texto h1{
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 40px;
+}
+
+.diferencial-texto span{
+    color: #2563eb;
+}
+
+.diferencial-texto p{
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    color: #8b96a9;
+    margin-top: 15px;
+}
+
+.diferencial-card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.diferencial-card{
+    border-bottom: 1px solid #a0a0a0;
+    padding-bottom: 15px;
+}
+
+.diferencial-card h2,p{
+    font-family: "Manrope", sans-serif;
+}
+
+.diferencial-apresentacao{
+    width: 690px;
+    height: 630px;
+    border: none;
+}
+
+.comunidade{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 90px;
+    background-color: #182443;
+    
+}
+
+.comunidade-texto{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 20px;
+}
+.comunidade-texto h1{
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+.comunidade-texto span{
+    color: #ff9667;
+}
+
+.comunidade-texto p{
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    color: #8b96a9;
+    margin-top: 15px;
+}
+
+.comunidade-animacao{
+    width: 690px;
+    height: 630px;
+    border: none;
+}
+
+.comunidade-texto button{
+    background-color: #ff7434;
+    border: none;
+    border-radius: 5px;
+    width: 156px;
+    height: 50px;
+    color: white;
+    box-shadow: 0 8px 18px #2563eb33;
+    transition: 0.3s ease;
+}
+
+.comunidade-texto button:hover{
+    background-color: #ff9667;
+    cursor: pointer;
+    transform: translateY(-3px);
 }
 
 @keyframes carrousel-infinito {
