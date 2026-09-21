@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie sua conta | EmpreendeAÊ</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <a routerLink="/home" class="voltar">
+            <span class="icone-voltar">‹</span>
+            Voltar para o início
+        </a>
+
+        <p class="link-login">
+            Já tem uma conta?
+            <a routerLink="/login">Entrar</a>
+        </p>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="area-cadastro">
+
+            <p class="subtitulo">COMECE SUA JORNADA</p>
+
+            <h1>Crie sua conta.</h1>
+
+            <p class="descricao">
+                Um primeiro passo simples para colocar seu negócio no mundo.
+            </p>
+
+            <form class="formulario-cadastro">
+                <div class="linha-formulario">
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Seu nome"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="negocio">Nome do negócio</label>
+                        <input
+                            type="text"
+                            id="negocio"
+                            name="negocio"
+                            placeholder="Como sua marca se chama?"
+                        >
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="voce@seunegocio.com"
+                    >
+                </div>
+
+                <div class="linha-formulario">
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Mínimo 6 caracteres"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="confirmar-senha">Confirmar senha</label>
+                        <input
+                            type="password"
+                            id="confirmar-senha"
+                            name="confirmar-senha"
+                            placeholder="Repita sua senha"
+                        >
+                    </div>
+                </div>
+
+                <div class="opcao">
+                    <input type="checkbox" id="termos" name="termos">
+                    <label for="termos">
+                        Li e aceito os
+                        <a href="#">Termos de Uso</a>
+                        e a
+                        <a href="#">Política de Privacidade.</a>
+                    </label>
+                </div>
+
+                <div class="aviso-privacidade">
+                    <span class="icone-seguranca">♧</span>
+
+                    <p>
+                        Seus dados serão tratados de acordo com a LGPD.
+                        Você pode consultar seus direitos na nossa política de
+                        privacidade.
+                    </p>
+                </div>
+
+                <div class="opcao opcao-novidades">
+                    <input type="checkbox" id="novidades" name="novidades">
+                    <label for="novidades">
+                        Quero receber novidades e conteúdos do EmpreendeAÊ.
+                    </label>
+                </div>
+
+                <button type="submit" class="botao-cadastro">
+                    <span>Criar minha conta</span>
+                    <span class="seta-botao">→</span>
+                </button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

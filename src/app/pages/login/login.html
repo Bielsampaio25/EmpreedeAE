@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | EmpreendeAÊ</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <a routerLink="/home" class="voltar">
+            <span class="icone-voltar">‹</span>
+            Voltar para o início
+        </a>
+
+        <p class="link-cadastro">
+            Ainda não tem uma conta?
+            <a routerLink="/cadastro">Criar conta</a>
+        </p>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="area-login">
+            <div class="icone-login">
+                <span>✧</span>
+            </div>
+
+            <p class="subtitulo">BEM-VINDO DE VOLTA</p>
+
+            <h1>Entre para continuar.</h1>
+
+            <p class="descricao">
+                Acesse seu espaço e continue construindo sua presença digital.
+            </p>
+
+            <form class="formulario-login">
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="voce@seunegocio.com"
+                    >
+                </div>
+
+                <div class="campo campo-senha">
+                    <label for="senha">Senha</label>
+
+                    <div class="entrada-senha">
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                        >
+
+                        <span class="icone-senha">♧</span>
+                    </div>
+                </div>
+
+                <div class="opcao-termos">
+                    <input
+                        type="checkbox"
+                        id="termos"
+                        name="termos"
+                    >
+
+                    <label for="termos">
+                        Aceito os
+                        <a href="#">termos e condições</a>.
+                    </label>
+                </div>
+
+                <a href="#" class="esqueci-senha">
+                    Esqueci minha senha
+                </a>
+
+                <button type="submit" class="botao-entrar">
+                    <span>Entrar</span>
+                    <span class="seta-botao">→</span>
+                </button>
+
+                <div class="separador">
+                    <span></span>
+                    <p>ou</p>
+                    <span></span>
+                </div>
+
+                <button type="button" class="botao-demo">
+                    Entrar com conta demo
+                </button>
+            </form>
+
+            <p class="texto-privacidade">
+                Ao entrar, você concorda com os
+                <a href="#">Termos de Uso</a>
+                e a
+                <a href="#">Política de Privacidade.</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

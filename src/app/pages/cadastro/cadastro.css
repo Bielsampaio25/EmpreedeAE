@@ -1,0 +1,275 @@
+
+
+body {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #10294d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cabecalho {
+    width: 100%;
+    height: 64px;
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #70819a;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.icone-voltar {
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.link-login {
+    color: #71819a;
+    font-size: 13px;
+}
+
+.link-login a {
+    color: #2864dc;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.conteudo-principal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 81px 20px 40px;
+}
+
+.area-cadastro {
+    width: 100%;
+    max-width: 588px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitulo {
+    margin-bottom: 23px;
+    color: #62718b;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.area-cadastro h1 {
+    margin-bottom: 13px;
+    color: #10294d;
+    font-size: 42px;
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.descricao {
+    margin-bottom: 39px;
+    color: #71829c;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.formulario-cadastro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.linha-formulario {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.campo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo label {
+    color: #354f72;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.campo input {
+    width: 100%;
+    height: 58px;
+    padding: 0 17px;
+    border: 1px solid #d9e1ec;
+    border-radius: 9px;
+    outline: none;
+    background: #fcfdff;
+    color: #354f72;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.campo input::placeholder {
+    color: #66768c;
+    opacity: 1;
+}
+
+.campo input:focus {
+    border-color: #789bf0;
+    box-shadow: 0 0 0 3px rgba(74, 106, 232, 0.08);
+}
+
+.opcao {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 3px;
+}
+
+.opcao input {
+    width: 19px;
+    height: 19px;
+    margin: 0;
+    flex-shrink: 0;
+    appearance: none;
+    border: 1px solid #cad5e4;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.opcao input:checked {
+    border-color: #456be8;
+    background: #456be8;
+    box-shadow: inset 0 0 0 4px #ffffff;
+}
+
+.opcao label {
+    color: #71819a;
+    font-size: 12px;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.opcao label a {
+    color: #2d61ce;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.aviso-privacidade {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: -5px;
+    padding-left: 1px;
+}
+
+.icone-seguranca {
+    color: #39a97a;
+    font-size: 22px;
+    line-height: 18px;
+}
+
+.aviso-privacidade p {
+    color: #8190a5;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.opcao-novidades {
+    margin-top: 2px;
+}
+
+.botao-cadastro {
+    width: 100%;
+    height: 52px;
+    margin-top: -1px;
+    padding: 0 27px;
+    border: none;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #8eacef;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 8px 25px rgba(83, 117, 210, 0.13);
+}
+
+.botao-cadastro:hover {
+    background: #789be7;
+    transform: translateY(-1px);
+}
+
+.seta-botao {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+@media (max-width: 700px) {
+    .cabecalho {
+        height: 60px;
+        padding: 0 20px;
+    }
+
+    .conteudo-principal {
+        padding: 50px 20px 35px;
+    }
+
+    .area-cadastro h1 {
+        font-size: 36px;
+    }
+
+    .linha-formulario {
+        flex-direction: column;
+        gap: 19px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho {
+        padding: 0 16px;
+    }
+
+    .link-login {
+        font-size: 12px;
+    }
+
+    .voltar {
+        font-size: 12px;
+    }
+
+    .conteudo-principal {
+        padding: 35px 18px;
+    }
+
+    .area-cadastro h1 {
+        font-size: 32px;
+    }
+
+    .descricao {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .campo input {
+        height: 54px;
+    }
+}
