@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
+
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 244px;
@@ -10,8 +12,6 @@
     background: #172443;
     color: #ffffff;
     font-family: Arial, sans-serif;
-    z-index: 1000;
-    overflow-y: auto;
 }
 
 .logo {
@@ -19,82 +19,18 @@
     height: 42px;
     display: flex;
     align-items: center;
-    gap: 9px;
-    padding-left: 10px;
     margin-bottom: 17px;
     font-size: 16px;
     font-weight: 700;
 }
 
-.logo-icon {
-    width: 27px;
-    height: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    background: linear-gradient(135deg, #4169e1, #6638e9);
-    font-size: 19px;
-    font-weight: 700;
+.logo img{
+    width: 60px;
+    height: 60px;
 }
 
-.logo-plus {
-    position: absolute;
-    top: 0;
-    left: 30px;
-    width: 12px;
-    height: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #ff7417;
-    font-size: 10px;
-}
-
-.negocio {
-    height: 46px;
-    padding: 7px 10px;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    border: 1px solid #3b4965;
-    border-radius: 7px;
-    background: #202e4d;
-}
-
-.negocio-icon {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    background: linear-gradient(135deg, #ff7540, #7048db);
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.negocio-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.negocio-info span {
-    color: #8d9ab5;
-    font-size: 9px;
-}
-
-.negocio-info strong {
-    color: #ffffff;
-    font-size: 11px;
-}
-
-.seta {
-    color: #8d9ab5;
-    font-size: 18px;
+.logo span{
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .menu {
@@ -126,14 +62,18 @@
     transition: 0.2s;
 }
 
+.item span{
+    font-family: "Manrope", sans-serif;
+}
+
 .item:hover {
     background: #233353;
     color: #ffffff;
 }
 
-.item.ativo {
-    background: linear-gradient(90deg, #2867ed, #4848c4);
-    color: #ffffff;
+.item img{
+    width: 20px;
+    height: 20px;
 }
 
 .icone {
@@ -149,82 +89,9 @@
     color: #ffffff;
 }
 
-.notificacao {
-    width: 18px;
-    height: 18px;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #ff7617;
-    color: #ffffff;
-    font-size: 9px;
-    font-weight: 700;
-}
-
 .conta {
     margin-top: 20px;
     margin-bottom: 11px;
-}
-
-.pro {
-    margin-left: auto;
-    padding: 3px 5px;
-    border-radius: 3px;
-    background: #4d2e9b;
-    color: #d8caff;
-    font-size: 7px;
-    font-weight: 700;
-}
-
-.crescer {
-    margin: auto 4px 20px;
-    padding: 15px;
-    border: 1px solid #3c4b69;
-    border-radius: 7px;
-    background: #202e4d;
-}
-
-.crescer-icon {
-    width: 27px;
-    height: 27px;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    background: #3a3449;
-    color: #ff8b58;
-    font-size: 17px;
-}
-
-.crescer h3 {
-    margin-bottom: 7px;
-    color: #ffffff;
-    font-size: 11px;
-}
-
-.crescer p {
-    margin-bottom: 11px;
-    color: #8190ad;
-    font-size: 9px;
-    line-height: 1.5;
-}
-
-.crescer a {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    color: #ffffff;
-    font-size: 9px;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.crescer a span {
-    color: #9aabc9;
-    font-size: 16px;
 }
 
 .perfil {
@@ -234,6 +101,7 @@
     align-items: center;
     gap: 9px;
     border-top: 1px solid #33415e;
+    margin-top: 430px;
 }
 
 .perfil-avatar {

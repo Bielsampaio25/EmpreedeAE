@@ -6,6 +6,7 @@
     align-items: center;
     margin-left: 30px;
     margin-right: 30px;
+    margin-top: 35px;
 }
 
 .nav-titulo{
@@ -56,6 +57,12 @@
     transform: translateY(-3px);
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .apresentacao{
     display: flex;
     align-items: center;
@@ -100,6 +107,7 @@
     width: 690px;
     height: 630px;
     border: none;
+    margin-top: 10px;
 }
 
 .carrousel-recursos {
@@ -160,6 +168,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 100px;
+    margin-top: 35px;
 }
 
 .comoFunciona-texto {
@@ -206,8 +215,7 @@
     display: flex;
     align-items: center;
     margin-left: 50px;
-    margin-top: 90px;
-    
+    margin-top: 80px;
 }
 
 .diferencial-info{
@@ -232,22 +240,47 @@
     margin-top: 15px;
 }
 
-.diferencial-card-container{
+.diferencial-card-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.diferencial-card{
+.diferencial-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     border-bottom: 1px solid #a0a0a0;
-    padding-bottom: 15px;
+    padding: 15px 0;
 }
 
-.diferencial-card h2,p{
+.diferencial-card img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.diferencial-card-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.diferencial-card h2 {
     font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    margin: 0;
 }
 
-.diferencial-apresentacao{
+.diferencial-card p {
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    color: #8b96a9;
+    margin: 0;
+}
+
+.diferencial-animacao{
     width: 690px;
     height: 630px;
     border: none;
@@ -257,9 +290,8 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: 90px;
     background-color: #182443;
-    
+    margin-top: 40px;
 }
 
 .comunidade-texto{
@@ -311,7 +343,6 @@
 .planos {
     width: 100%;
     padding: 110px 0 120px;
-    background-color: #f8f9fc;
 }
 
 .planos-titulo {
@@ -363,19 +394,6 @@
     box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
 }
 
-.plano-badge {
-    position: absolute;
-    top: -1px;
-    right: 30px;
-    background-color: #2563eb;
-    color: white;
-    font-family: "Manrope", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 7px 15px;
-    border-radius: 0 0 6px 6px;
-}
-
 .plano-topo {
     display: flex;
     align-items: center;
@@ -387,36 +405,6 @@
     font-family: "Space Grotesk", sans-serif;
     font-size: 17px;
     color: #43516a;
-}
-
-.plano-icone {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9px;
-}
-
-.plano-icone span {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1;
-}
-
-.plano-icone.gratuito {
-    background-color: #edf3ff;
-    color: #2563eb;
-}
-
-.plano-icone.profissional {
-    background-color: #f0eaff;
-    color: #7c3aed;
-}
-
-.plano-icone.negocio {
-    background-color: #fff0e9;
-    color: #ff7434;
 }
 
 .plano-preco {
@@ -527,8 +515,9 @@
 
 .footer {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #eceaea;
     font-family: "Manrope", sans-serif;
+    margin-top: 40px;
 }
 
 .footer-container {
@@ -606,7 +595,7 @@
     width: 90%;
     max-width: 1290px;
     margin: 0 auto;
-    border-top: 1px solid #e5e9f0;
+    border-top: 1px solid #b1b1b1;
     padding: 22px 0;
     display: flex;
     justify-content: space-between;
@@ -615,12 +604,6 @@
 
 .footer-bottom p {
     margin: 0;
-    font-family: "Manrope", sans-serif;
-    font-size: 12px;
-    color: #94a0b4;
-}
-
-.footer-bottom span {
     font-family: "Manrope", sans-serif;
     font-size: 12px;
     color: #94a0b4;
