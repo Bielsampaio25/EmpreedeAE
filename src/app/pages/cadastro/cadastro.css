@@ -203,7 +203,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background: #8eacef;
+    background: #3774f7;
     color: #ffffff;
     font-size: 15px;
     font-weight: 700;
@@ -213,7 +213,7 @@ body {
 }
 
 .botao-cadastro:hover {
-    background: #789be7;
+    background: #5788f3;
     transform: translateY(-1px);
 }
 

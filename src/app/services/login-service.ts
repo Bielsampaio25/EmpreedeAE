@@ -17,14 +17,4 @@ export class LoginService {
 
         return usuario.email === email && usuario.senha === senha;
     }
-
-    buscarUsuario(): UsuarioModel | null {
-        const dados = localStorage.getItem('usuario');
-
-        if (!dados) {
-            return null;
-        }
-
-        return JSON.parse(dados);
-    }
 }

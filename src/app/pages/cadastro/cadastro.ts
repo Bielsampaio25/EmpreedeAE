@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsuarioModel } from '../../models/usuario-model';
 import { FormsModule } from '@angular/forms';
 import { CadastroService } from '../../services/cadastro-service';
@@ -18,9 +18,16 @@ export class Cadastro {
         senha: ''
     };
 
-    constructor(private cadastroService: CadastroService) {}
+    constructor(
+        private cadastroService: CadastroService,
+        private router: Router
+    ) {}
 
     cadastrar() {
-        this.cadastroService.cadastrar(this.usuario);
-    }
+    this.cadastroService.cadastrar(this.usuario);
+
+    console.log('Usuário cadastrado:', this.usuario);
+
+    this.router.navigate(['/login']);
+}
 }

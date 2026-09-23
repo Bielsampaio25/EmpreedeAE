@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar | EmpreendeAÊ</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <header class="cabecalho">
         <a routerLink="/home" class="voltar">
@@ -30,38 +32,25 @@
                 Acesse seu espaço e continue construindo sua presença digital.
             </p>
 
-            <form class="formulario-login">
+            <form class="formulario-login" (ngSubmit)="entrar()">
                 <div class="campo">
                     <label for="email">E-mail</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="voce@seunegocio.com"
-                    >
+                    <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="voce@seunegocio.com">
                 </div>
 
                 <div class="campo campo-senha">
                     <label for="senha">Senha</label>
 
                     <div class="entrada-senha">
-                        <input
-                            type="password"
-                            id="senha"
-                            name="senha"
-                            placeholder="Digite sua senha"
-                        >
+                        <input type="password" id="senha" name="senha" [(ngModel)]="senha"
+                            placeholder="Digite sua senha">
 
                         <span class="icone-senha">♧</span>
                     </div>
                 </div>
 
                 <div class="opcao-termos">
-                    <input
-                        type="checkbox"
-                        id="termos"
-                        name="termos"
-                    >
+                    <input type="checkbox" id="termos" name="termos">
 
                     <label for="termos">
                         Aceito os
@@ -98,4 +87,5 @@
         </section>
     </main>
 </body>
+
 </html>
