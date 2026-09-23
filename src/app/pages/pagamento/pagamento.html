@@ -1,0 +1,221 @@
+<app-sidebar></app-sidebar>
+<main>
+    <div class="pagamento-container">
+
+        <a href="/planos" class="voltar">
+            <span>←</span>
+            Voltar para planos
+        </a>
+
+        <div class="pagamento-layout">
+
+            <section class="pagamento-conteudo">
+
+                <header class="cabecalho">
+                    <span>FINALIZAR ASSINATURA</span>
+
+                    <h1>Escolha como pagar.</h1>
+
+                    <p>
+                        Você está assinando o plano
+                        <strong>Profissional.</strong>
+                        O pagamento abaixo é uma simulação segura.
+                    </p>
+                </header>
+
+                <div class="metodos">
+
+                    <button
+                        type="button"
+                        class="metodo"
+                        [class.metodo-ativo]="metodoSelecionado === 'pix'"
+                        (click)="selecionarMetodo('pix')">
+
+                        <div class="metodo-icone">
+                            <img src="/icones/icone_pix.png" alt="">
+                        </div>
+
+                        <div class="metodo-info">
+                            <strong>Pix</strong>
+                            <span>Aprovação imediata</span>
+                        </div>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="metodo"
+                        [class.metodo-ativo]="metodoSelecionado === 'cartao'"
+                        (click)="selecionarMetodo('cartao')">
+
+                        <div class="metodo-icone cartao">
+                            <img src="/icones/icone_cartao.png" alt="">
+                        </div>
+
+                        <div class="metodo-info">
+                            <strong>Cartão</strong>
+                            <span>Crédito ou débito</span>
+                        </div>
+
+                    </button>
+
+                </div>
+
+                <section class="pagamento-card">
+
+                    @if (metodoSelecionado === 'pix') {
+
+                        <div class="pix-area">
+
+                            <div class="pix-imagem">
+                                <img src="/icones/icone_pix.png" alt="">
+                            </div>
+
+                            <div class="pix-conteudo">
+
+                                <h2>Pague com Pix</h2>
+
+                                <p>
+                                    Gere um código Pix demonstrativo e clique em
+                                    concluir para confirmar o pagamento.
+                                </p>
+
+                                <div class="pix-codigo">
+
+                                    <span>
+                                        00020126580014BR.GOV.BCB.PIX0136empreendeae-pagamento-profissional
+                                    </span>
+
+                                    <button type="button">
+                                        Copiar
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button routerLink="/pagamentoConfirmado" type="button" class="botao-concluir">
+                            Concluir pagamento
+                            <span>→</span>
+                        </button>
+
+                    } @else {
+
+                        <div class="cartao-area">
+
+                            <div class="cartao-cabecalho">
+
+                                <span>PAGAMENTO COM CARTÃO</span>
+
+                                <h2>Dados do cartão</h2>
+
+                                <p>
+                                    Preencha os dados abaixo para continuar.
+                                </p>
+
+                            </div>
+
+                            <div class="formulario-cartao">
+
+                                <div class="campo campo-completo">
+                                    <label for="numeroCartao">
+                                        Número do cartão
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="numeroCartao"
+                                        placeholder="0000 0000 0000 0000"
+                                        maxlength="19">
+                                </div>
+
+                                <div class="campo campo-completo">
+                                    <label for="nomeCartao">
+                                        Nome impresso no cartão
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="nomeCartao"
+                                        placeholder="Nome completo">
+                                </div>
+
+                                <div class="campo">
+                                    <label for="validade">
+                                        Validade
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="validade"
+                                        placeholder="MM/AA"
+                                        maxlength="5">
+                                </div>
+
+                                <div class="campo">
+                                    <label for="cvv">
+                                        CVV
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="cvv"
+                                        placeholder="000"
+                                        maxlength="4">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button routerLink="/pagamentoConfirmado" type="button" class="botao-concluir">
+                            Concluir pagamento
+                            <span>→</span>
+                        </button>
+
+                    }
+
+                </section>
+
+            </section>
+
+            <aside class="resumo">
+
+                <span class="resumo-label">
+                    RESUMO DA ASSINATURA
+                </span>
+
+                <h2>Profissional</h2>
+
+                <div class="resumo-preco">
+                    <strong>R$ 29</strong>
+                    <span>/ mês</span>
+                </div>
+
+                <div class="resumo-divisor"></div>
+
+                <div class="resumo-linha">
+                    <span>Subtotal</span>
+                    <strong>R$ 29/mês</strong>
+                </div>
+
+                <div class="resumo-linha">
+                    <span>Taxas</span>
+                    <strong>R$ 0,00</strong>
+                </div>
+
+                <div class="resumo-divisor"></div>
+
+                <div class="resumo-total">
+                    <span>Total hoje</span>
+                    <strong>R$ 29</strong>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+</main>

@@ -1,0 +1,280 @@
+main {
+    width: calc(100% - 244px);
+    min-height: 100dvh;
+    margin-left: 244px;
+    background: #f8f9fd;
+    box-sizing: border-box;
+}
+
+.planos-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 40px 60px;
+    box-sizing: border-box;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.cabecalho > span {
+    display: block;
+    margin-bottom: 20px;
+    color: #536d99;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    color: #1b2c4b;
+    font-size: 52px;
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+    font-weight: 700;
+}
+
+.cabecalho h1 strong {
+    color: #2864e8;
+    font-weight: 700;
+}
+
+.cabecalho p {
+    max-width: 570px;
+    margin: 22px auto 0;
+    color: #78869c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.planos {
+    width: 100%;
+}
+
+.planos-titulo {
+    text-align: center;
+    margin-bottom: 45px;
+    padding: 0 20px;
+}
+
+.planos-titulo h2 {
+    margin: 0 0 12px;
+    color: #14213d;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.planos-titulo p {
+    margin: 0;
+    color: #8b96a9;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+}
+
+.planos-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.plano-card {
+    position: relative;
+    min-height: 490px;
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid #dfe5ef;
+    border-radius: 15px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+.plano-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20, 33, 61, 0.08);
+}
+
+.plano-destaque {
+    border: 1.5px solid #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+.plano-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.plano-topo h2 {
+    margin: 0;
+    color: #43516a;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.plano-preco {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.plano-preco strong {
+    color: #14213d;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.plano-preco span {
+    margin-left: 4px;
+    color: #8b96a9;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+}
+
+.plano-descricao {
+    margin: 0 0 28px;
+    color: #8b96a9;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+}
+
+.plano-btn {
+    width: 100%;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #ffffff;
+    border: 1px solid #dce2ed;
+    border-radius: 9px;
+    color: #14213d;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.plano-btn span {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.plano-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.plano-btn-destaque {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.20);
+}
+
+.plano-btn-destaque:hover {
+    background-color: #457ef8;
+    border-color: #457ef8;
+    color: #ffffff;
+}
+
+.plano-divisor {
+    width: 100%;
+    height: 1px;
+    margin: 28px 0 32px;
+    background-color: #dfe5ef;
+}
+
+.plano-card h3 {
+    margin: 0 0 25px;
+    color: #43516a;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.plano-beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.plano-beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #36b37e;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+}
+
+.plano-beneficios li span {
+    color: #8b96a9;
+}
+
+@media (max-width: 1000px) {
+    .cabecalho {
+        margin-bottom: 80px;
+    }
+
+    .cabecalho h1 {
+        font-size: 43px;
+    }
+
+    .planos-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .plano-destaque {
+        order: -1;
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .planos-container {
+        padding: 35px 20px 50px;
+    }
+
+    .cabecalho {
+        margin-bottom: 60px;
+    }
+
+    .cabecalho h1 {
+        font-size: 36px;
+        letter-spacing: -1.5px;
+    }
+
+    .planos-titulo h2 {
+        font-size: 27px;
+    }
+
+    .planos-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .plano-destaque {
+        order: 0;
+    }
+
+    .plano-card {
+        min-height: auto;
+    }
+}

@@ -1,0 +1,309 @@
+main {
+    width: calc(100% - 244px);
+    min-height: 100vh;
+    margin-left: 244px;
+    background: #f5f7fc;
+    box-sizing: border-box;
+}
+
+.perfil-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 42px 40px 60px;
+    box-sizing: border-box;
+}
+
+.cabecalho {
+    margin-bottom: 27px;
+}
+
+.cabecalho > span {
+    display: block;
+    margin-bottom: 8px;
+    color: #58709a;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    color: #172b4d;
+    font-size: 29px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.perfil-destaque {
+    position: relative;
+    min-height: 130px;
+    padding: 28px 22px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background: #1c3158;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.perfil-destaque::before {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    right: 5px;
+    top: -110px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+}
+
+.perfil-destaque::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    right: -25px;
+    bottom: -125px;
+    border: 1px solid rgba(255, 157, 65, 0.35);
+    border-radius: 50%;
+}
+
+.perfil-info {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.foto-perfil {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8d52, #9347db);
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.dados-perfil h2 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.dados-perfil p {
+    margin: 0;
+    color: #b9c5db;
+    font-size: 10px;
+}
+
+.botao-trocar-foto {
+    position: relative;
+    z-index: 2;
+    min-width: 74px;
+    height: 36px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #1a2d4d;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.botao-trocar-foto:hover {
+    background: #f0f3f8;
+    transform: translateY(-1px);
+}
+
+.card {
+    width: 100%;
+    padding: 23px 21px;
+    margin-bottom: 16px;
+    background: #ffffff;
+    border: 1px solid #edf0f5;
+    border-radius: 7px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 20px rgba(30, 50, 80, 0.025);
+}
+
+.card-cabecalho {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-cabecalho > div:first-child > span {
+    display: block;
+    margin-bottom: 7px;
+    color: #647da5;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+}
+
+.card-cabecalho h2 {
+    margin: 0;
+    color: #1c355c;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.icone-card {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2463e9;
+    font-size: 18px;
+}
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+}
+
+.campo {
+    width: calc(50% - 5px);
+    margin-bottom: 12px;
+}
+
+.campo-completo {
+    width: 100%;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    color: #52627a;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 0 11px;
+    border: 1px solid #dce2eb;
+    border-radius: 6px;
+    outline: none;
+    background: #fbfcfe;
+    color: #263d60;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 500;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.campo input {
+    height: 32px;
+}
+
+.campo textarea {
+    min-height: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #2867ed;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(40, 103, 237, 0.08);
+}
+
+.acoes {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3px;
+}
+
+.botao-salvar {
+    min-width: 190px;
+    height: 42px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 7px;
+    background: #2864e8;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 7px 16px rgba(40, 100, 232, 0.18);
+    transition: 0.2s ease;
+}
+
+.botao-salvar span {
+    font-size: 17px;
+    line-height: 1;
+}
+
+.botao-salvar:hover {
+    background: #1f57d1;
+    transform: translateY(-1px);
+    box-shadow: 0 9px 20px rgba(40, 100, 232, 0.24);
+}
+
+@media (max-width: 800px) {
+    main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .perfil-container {
+        padding: 30px 20px 40px;
+    }
+
+    .perfil-destaque {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .botao-trocar-foto {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 600px) {
+    .campo {
+        width: 100%;
+    }
+
+    .cabecalho h1 {
+        font-size: 25px;
+    }
+
+    .acoes {
+        justify-content: stretch;
+    }
+
+    .botao-salvar {
+        width: 100%;
+    }
+}
