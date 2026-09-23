@@ -1,0 +1,350 @@
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 78px;
+    padding: 0 38px;
+    border-bottom: 1px solid #e9edf4;
+    box-sizing: border-box;
+}
+
+.site-nav-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-nav-titulo img {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    background-color: #2563eb;
+}
+
+.site-nav-titulo h1 {
+    margin: 0;
+    color: #17213d;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+}
+
+.site-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-menu a {
+    color: #68758d;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.site-nav button {
+    width: 155px;
+    height: 42px;
+    background-color: #2563eb;
+}
+
+.site-destaque {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 420px;
+    padding: 60px 70px;
+    box-sizing: border-box;
+    background-color: #eef0ff;
+}
+
+.destaque-conteudo {
+    width: 48%;
+}
+
+.site-destaque span {
+    color: #ff6b00;
+}
+
+.site-destaque h2 {
+    margin: 22px 0 15px;
+    color: #17213d;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 52px;
+    line-height: 1;
+}
+
+.site-destaque p {
+    max-width: 470px;
+    margin: 0 0 28px;
+    color: #68758d;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.site-destaque button {
+    width: 210px;
+    height: 45px;
+    background-color: #ff6b00;
+}
+
+.destaque-imagem {
+    width: 40%;
+    height: 280px;
+}
+
+.site-momentos {
+    padding: 60px 70px;
+    background-color: white;
+}
+
+.momentos-cabecalho {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.momentos-cabecalho span,
+.site-historia span,
+.site-produtos span {
+    color: #71809a;
+}
+
+.momentos-cabecalho h2,
+.site-historia h2,
+.site-produtos h2 {
+    margin: 12px 0 0;
+    color: #17213d;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 34px;
+}
+
+.momentos-cabecalho p,
+.produtos-cabecalho p {
+    margin: 0;
+    color: #71809a;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+}
+
+.momentos-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.momento {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+}
+
+.momento div {
+    width: 100%;
+}
+
+.momento h3 {
+    margin: 0 0 4px;
+    font-size: 14px;
+}
+
+.momento p {
+    margin: 0;
+    font-size: 10px;
+}
+
+.momento-detalhe {
+    width: calc(33.333% - 7px);
+    height: 210px;
+    background: linear-gradient(150deg, #2864ed, #30206e);
+}
+
+.momento-movimento,
+.momento-envio {
+    width: calc(33.333% - 7px);
+    height: 100px;
+}
+
+.momento-movimento {
+    background: linear-gradient(150deg, #ff7015, #73334d);
+}
+
+.momento-envio {
+    background: linear-gradient(150deg, #292d57, #6244b3);
+}
+
+.momento-processo {
+    width: calc(33.333% - 7px);
+    height: 100px;
+    background: linear-gradient(150deg, #108a87, #17366d);
+}
+
+.site-historia {
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 80px 70px;
+    background-color: white;
+    border-top: 1px solid #f0f2f6;
+}
+
+.historia-titulo,
+.historia-texto {
+    width: 50%;
+}
+
+.historia-titulo h2 {
+    max-width: 430px;
+    font-size: 38px;
+    line-height: 1.1;
+}
+
+.historia-texto p {
+    margin: 0;
+    color: #7a879d;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.site-produtos {
+    padding: 70px;
+    background-color: #f7f8fc;
+}
+
+.produtos-cabecalho {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.produtos-conteudo {
+    display: flex;
+    gap: 18px;
+}
+
+.produto {
+    flex: 1;
+    overflow: hidden;
+    border: 1px solid #e1e6ef;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.produto-imagem {
+    height: 170px;
+    background-color: #eeeffc;
+}
+
+.produto-informacoes {
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    font-family: "Manrope", sans-serif;
+}
+
+.produto-informacoes h3 {
+    margin: 0 0 6px;
+    color: #17213d;
+    font-size: 14px;
+}
+
+.produto-informacoes span {
+    margin-bottom: 10px;
+    color: #9aa5b7;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
+.produto-informacoes strong {
+    color: #2563eb;
+    font-size: 13px;
+}
+
+.site-footer {
+    background-color: #141d30;
+    color: white;
+}
+
+.footer-conteudo {
+    display: flex;
+    justify-content: space-between;
+    padding: 75px 70px;
+}
+
+.site-footer span {
+    color: #ff6b00;
+}
+
+.footer-conteudo h2 {
+    margin: 20px 0 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 42px;
+    line-height: 1.05;
+}
+
+.footer-conteudo h2 strong {
+    color: #ff6b00;
+}
+
+.footer-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 35px;
+}
+
+.footer-contato p {
+    margin: 0;
+    color: #a9b4c8;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+}
+
+.footer-final {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 22px 70px;
+    background-color: #101827;
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+}
+
+.footer-final strong {
+    color: white;
+}
+
+.footer-final span {
+    color: #7f8ba0;
+    letter-spacing: 0;
+}
+
+.footer-redes {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.footer-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #344056;
+    border-radius: 50%;
+    color: #b8c2d3;
+    font-size: 9px;
+    text-decoration: none;
+}

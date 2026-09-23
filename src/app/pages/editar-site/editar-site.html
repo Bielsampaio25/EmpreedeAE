@@ -1,0 +1,419 @@
+<app-sidebar></app-sidebar>
+
+<main>
+    <section class="cabecalho-pagina">
+        <div>
+            <span class="subtitulo-pagina">PERSONALIZE SEU SITE</span>
+            <h1>Editar site</h1>
+            <p>Configure cada parte do seu site e deixe sua marca com a sua identidade.</p>
+        </div>
+
+        <div class="acoes-pagina">
+            <button class="botao-secundario">Visualizar site</button>
+            <button class="botao-principal">Salvar alterações</button>
+        </div>
+    </section>
+
+    <section class="editor">
+        
+
+        <div class="conteudo-editor">
+            <section class="secao-editor">
+                <div class="titulo-secao-editor">
+                    <div>
+                        <span>01 · CABEÇALHO</span>
+                        <h2>Cabeçalho do site</h2>
+                        <p>Personalize a identidade e os elementos principais da navegação.</p>
+                    </div>
+                </div>
+
+                <div class="grupo-formulario">
+                    <div class="campo-formulario">
+                        <label>Logo do empreendimento</label>
+
+                        <div class="upload-imagem">
+                            <div class="preview-logo">
+                                <img src="" alt="Logo do empreendimento">
+                            </div>
+
+                            <div class="upload-conteudo">
+                                <strong>Adicione sua logo</strong>
+                                <span>PNG, JPG ou SVG · até 5 MB</span>
+                                <label class="botao-upload">
+                                    Escolher imagem
+                                    <input type="file" accept="image/png,image/jpeg,image/svg+xml">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="nome-negocio">Nome do empreendimento</label>
+
+                        <div class="campo-com-cor">
+                            <input
+                                type="text"
+                                id="nome-negocio"
+                                placeholder="Ex.: Gabriel Camisetas">
+
+                            <input
+                                type="color"
+                                value="#17213D"
+                                title="Escolher cor do nome">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bloco-formulario">
+                    <div class="cabecalho-bloco">
+                        <div>
+                            <h3>Links de navegação</h3>
+                            <p>Adicione os links que aparecerão no menu do seu site.</p>
+                        </div>
+
+                        <button class="botao-adicionar">+ Adicionar link</button>
+                    </div>
+
+                    <div class="lista-links">
+                        <div class="linha-link">
+                            <div class="campo-formulario">
+                                <label>Nome do link</label>
+                                <input type="text" placeholder="Ex.: Sobre">
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Endereço do link</label>
+                                <input type="text" placeholder="Ex.: #sobre">
+                            </div>
+
+                            <button class="botao-remover">Remover</button>
+                        </div>
+
+                        <div class="linha-link">
+                            <div class="campo-formulario">
+                                <label>Nome do link</label>
+                                <input type="text" placeholder="Ex.: Produtos">
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Endereço do link</label>
+                                <input type="text" placeholder="Ex.: #produtos">
+                            </div>
+
+                            <button class="botao-remover">Remover</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bloco-formulario">
+                    <div class="cabecalho-bloco">
+                        <div>
+                            <h3>Botão do cabeçalho</h3>
+                            <p>Escolha o texto e a cor do botão principal.</p>
+                        </div>
+                    </div>
+
+                    <div class="linha-formulario">
+                        <div class="campo-formulario">
+                            <label>Texto do botão</label>
+                            <input type="text" placeholder="Ex.: Falar com a marca">
+                        </div>
+
+                        <div class="campo-formulario campo-cor">
+                            <label>Cor do botão</label>
+                            <div class="seletor-cor">
+                                <input type="color" value="#2563EB">
+                                <span>#2563EB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-editor">
+                <div class="titulo-secao-editor">
+                    <div>
+                        <span>02 · HISTÓRIA</span>
+                        <h2>História do empreendimento</h2>
+                        <p>Conte para seus visitantes quem está por trás da sua marca.</p>
+                    </div>
+                </div>
+
+                <div class="grupo-formulario">
+                    <div class="campo-formulario">
+                        <label>Subtítulo</label>
+                        <input type="text" placeholder="Ex.: Nossa história">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Título</label>
+                        <input type="text" placeholder="Ex.: Feito para vestir o que importa">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Texto descritivo</label>
+                        <textarea placeholder="Conte um pouco sobre a história do seu empreendimento..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-editor">
+                <div class="titulo-secao-editor">
+                    <div>
+                        <span>03 · PRODUTOS</span>
+                        <h2>Produtos</h2>
+                        <p>Apresente seus produtos, serviços ou principais ofertas.</p>
+                    </div>
+
+                    <button class="botao-adicionar">+ Adicionar produto</button>
+                </div>
+
+                <div class="grupo-formulario">
+                    <div class="campo-formulario">
+                        <label>Subtítulo da seção</label>
+                        <input type="text" placeholder="Ex.: Escolhas que contam">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Título da seção</label>
+                        <input type="text" placeholder="Ex.: Feito para você">
+                    </div>
+                </div>
+
+                <div class="lista-produtos">
+                    <article class="card-produto-editor">
+                        <div class="cabecalho-card">
+                            <div>
+                                <span>PRODUTO 01</span>
+                                <h3>Novo produto</h3>
+                            </div>
+
+                            <button class="botao-remover">Remover</button>
+                        </div>
+
+                        <div class="upload-produto">
+                            <div class="espaco-imagem-produto">
+                                <img src="" alt="Imagem do produto">
+                            </div>
+
+                            <label class="botao-upload">
+                                Escolher imagem
+                                <input type="file" accept="image/png,image/jpeg,image/webp">
+                            </label>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <div class="campo-formulario">
+                                <label>Título do produto</label>
+                                <input type="text" placeholder="Ex.: Camiseta Manifesto">
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Descrição</label>
+                                <textarea placeholder="Descreva seu produto..."></textarea>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Preço</label>
+                                <input type="text" placeholder="Ex.: R$ 89,90">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="secao-editor">
+                <div class="titulo-secao-editor">
+                    <div>
+                        <span>04 · CARROSSEL</span>
+                        <h2>Carrossel de destaques</h2>
+                        <p>Crie cards para destacar produtos, campanhas ou novidades.</p>
+                    </div>
+
+                    <button class="botao-adicionar">+ Adicionar card</button>
+                </div>
+
+                <div class="lista-carrossel">
+                    <article class="card-carrossel-editor">
+                        <div class="cabecalho-card">
+                            <div>
+                                <span>CARD 01</span>
+                                <h3>Destaque do carrossel</h3>
+                            </div>
+
+                            <button class="botao-remover">Remover</button>
+                        </div>
+
+                        <div class="upload-carrossel">
+                            <div class="espaco-imagem-carrossel">
+                                <img src="" alt="Imagem do carrossel">
+                            </div>
+
+                            <label class="botao-upload">
+                                Escolher imagem
+                                <input type="file" accept="image/png,image/jpeg,image/webp">
+                            </label>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <div class="campo-formulario">
+                                <label>Subtítulo</label>
+                                <input type="text" placeholder="Ex.: Destaque do negócio">
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Título</label>
+                                <input type="text" placeholder="Ex.: Ideias que viram identidade">
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Descrição</label>
+                                <textarea placeholder="Escreva uma descrição para este destaque..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="bloco-formulario">
+                            <div class="cabecalho-bloco">
+                                <div>
+                                    <h3>Botão</h3>
+                                    <p>Defina o texto, cor e destino do botão.</p>
+                                </div>
+                            </div>
+
+                            <div class="linha-formulario">
+                                <div class="campo-formulario">
+                                    <label>Texto do botão</label>
+                                    <input type="text" placeholder="Ex.: Conheça agora">
+                                </div>
+
+                                <div class="campo-formulario">
+                                    <label>Link de redirecionamento</label>
+                                    <input type="text" placeholder="https://...">
+                                </div>
+
+                                <div class="campo-formulario campo-cor">
+                                    <label>Cor</label>
+                                    <div class="seletor-cor">
+                                        <input type="color" value="#FF6B00">
+                                        <span>#FF6B00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="secao-editor">
+                <div class="titulo-secao-editor">
+                    <div>
+                        <span>05 · VÍDEO PROMOCIONAL</span>
+                        <h2>Vídeo promocional</h2>
+                        <p>Adicione um vídeo para apresentar sua marca de uma forma mais visual.</p>
+                    </div>
+
+                    <span class="etiqueta-pro">PRO</span>
+                </div>
+
+                <div class="conteudo-premium">
+                    <div class="premium-texto">
+                        <span class="icone-premium">PRO</span>
+                        <h3>Recurso exclusivo para assinantes</h3>
+                        <p>
+                            Adicione um vídeo promocional ao seu site e destaque
+                            sua marca de uma maneira mais envolvente.
+                        </p>
+                        <button class="botao-principal">Conhecer planos</button>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Vídeo promocional</label>
+                        <div class="upload-video">
+                            <span>Arraste seu vídeo ou escolha um arquivo</span>
+                            <small>MP4, WebM · até 50 MB</small>
+                            <label class="botao-upload">
+                                Escolher vídeo
+                                <input type="file" accept="video/mp4,video/webm">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-editor">
+                <div class="titulo-secao-editor">
+                    <div>
+                        <span>06 · RODAPÉ</span>
+                        <h2>Rodapé do site</h2>
+                        <p>Configure as informações de contato e links do rodapé.</p>
+                    </div>
+                </div>
+
+                <div class="grupo-formulario">
+                    <div class="campo-formulario">
+                        <label>Subtítulo</label>
+                        <input type="text" placeholder="Ex.: Vamos conversar?">
+                    </div>
+                </div>
+
+                <div class="bloco-formulario">
+                    <div class="cabecalho-bloco">
+                        <div>
+                            <h3>Grupo de links</h3>
+                            <p>Adicione contatos, redes sociais e outras informações.</p>
+                        </div>
+
+                        <button class="botao-adicionar">+ Adicionar link</button>
+                    </div>
+
+                    <div class="lista-links">
+                        <div class="linha-link">
+                            <div class="campo-formulario">
+                                <label>Nome</label>
+                                <input type="text" placeholder="Ex.: E-mail">
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Informação ou link</label>
+                                <input type="text" placeholder="Ex.: contato@empresa.com">
+                            </div>
+
+                            <button class="botao-remover">Remover</button>
+                        </div>
+
+                        <div class="linha-link">
+                            <div class="campo-formulario">
+                                <label>Nome</label>
+                                <input type="text" placeholder="Ex.: Telefone">
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Informação ou link</label>
+                                <input type="text" placeholder="Ex.: (71) 99999-9999">
+                            </div>
+
+                            <button class="botao-remover">Remover</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bloco-formulario">
+                    <div class="cabecalho-bloco">
+                        <div>
+                            <h3>Copyright</h3>
+                            <p>Essa informação será atualizada automaticamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Copyright gerado automaticamente</label>
+                        <input
+                            type="text"
+                            [value]="'© ' + anoAtual + ' Gabriel Camisetas. Todos os direitos reservados.'"
+                            readonly>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
