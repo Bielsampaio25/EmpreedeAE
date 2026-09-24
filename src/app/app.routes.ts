@@ -11,6 +11,8 @@ import { Planos } from './pages/planos/planos';
 import { Pagamento } from './pages/pagamento/pagamento';
 import { PagamentoConfirmado } from './pages/pagamento-confirmado/pagamento-confirmado';
 import { authGuard } from './guards/auth-guard-guard';
+import { Termos } from './pages/termos/termos';
+import { Politica } from './pages/politica/politica';
 
 export const routes: Routes = [
     {path:"", redirectTo:"home", pathMatch:"full"},
@@ -24,5 +26,7 @@ export const routes: Routes = [
     {path:"perfil", component:Perfil, canActivate: [authGuard]},
     {path:"planos", component:Planos, canActivate: [authGuard]},
     {path:"pagamento", component:Pagamento, canActivate: [authGuard]},
-    {path:"pagamentoConfirmado", component:PagamentoConfirmado, canActivate: [authGuard]}
+    {path:"pagamentoConfirmado", component:PagamentoConfirmado, canActivate: [authGuard]},
+    {path:"termos", component:Termos},
+    {path:"politica", component:Politica}
 ];
