@@ -12,42 +12,50 @@
 
             <div class="mensagens">
 
-                <div class="mensagem mensagem-esquerda">
-                    <span class="nome">Paulo</span>
+                <div
+                    *ngFor="let mensagem of mensagens"
+                    class="mensagem"
+                    [class.mensagem-esquerda]="mensagem.lado === 'esquerda'"
+                    [class.mensagem-direita]="mensagem.lado === 'direita'"
+                >
+
+                    <span class="nome">
+                        {{ mensagem.nome }}
+                    </span>
 
                     <div class="balao">
-                        Galera, bom dia! Descobri um livro ótimo sobre empreendedorismo.
-                        <div class="status">✓✓</div>
+                        {{ mensagem.texto }}
+
+                        <div class="status">
+                            {{ mensagem.status }}
+                        </div>
                     </div>
-                </div>
 
-                <div class="mensagem mensagem-esquerda">
-                    <span class="nome">Maria</span>
-
-                    <div class="balao">
-                        Depois manda aqui para darmos uma olhada.
-                        <div class="status">✓✓</div>
-                    </div>
-                </div>
-
-                <div class="mensagem mensagem-direita">
-                    <span class="nome">Você</span>
-
-                    <div class="balao">
-                        Tenho um super interessante também, depois mandarei aqui na comunidade.
-                        <div class="status">✓✓</div>
-                    </div>
                 </div>
 
             </div>
 
-            <div class="campo-mensagem">
-                <input type="text" placeholder="Digite uma mensagem...">
+            <form
+                class="campo-mensagem"
+                (ngSubmit)="enviarMensagem()"
+            >
 
-                <button type="button" aria-label="Enviar mensagem">
+                <input
+                    type="text"
+                    name="mensagem"
+                    [(ngModel)]="novaMensagem"
+                    placeholder="Digite uma mensagem..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                    aria-label="Enviar mensagem"
+                >
                     <span>→</span>
                 </button>
-            </div>
+
+            </form>
 
         </section>
 
