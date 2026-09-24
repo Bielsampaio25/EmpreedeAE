@@ -145,4 +145,6 @@
 .logout {
     color: #8492ad;
     font-size: 19px;
+    border: none;
+    background-color: transparent;
 }

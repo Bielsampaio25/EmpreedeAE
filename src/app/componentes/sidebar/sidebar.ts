@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CadastroService } from '../../services/cadastro-service';
 import { UsuarioModel } from '../../models/usuario-model';
 
@@ -17,7 +17,10 @@ export class Sidebar {
         senha: ''
     };
 
-    constructor(private cadastroService: CadastroService) {}
+    constructor(
+        private cadastroService: CadastroService,
+        private router: Router
+    ) {}
 
     ngOnInit() {
         this.atualizarPerfil();
@@ -29,5 +32,12 @@ export class Sidebar {
         if (usuarioSalvo) {
             this.usuario = usuarioSalvo;
         }
+    }
+
+    logout() {
+        localStorage.removeItem('usuario');
+        localStorage.removeItem('perfil');
+
+        this.router.navigate(['/login']);
     }
 }
