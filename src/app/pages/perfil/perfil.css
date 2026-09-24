@@ -81,6 +81,7 @@ main {
     display: flex;
     align-items: center;
     gap: 14px;
+    min-width: 0;
 }
 
 .foto-perfil {
@@ -99,12 +100,17 @@ main {
     box-sizing: border-box;
 }
 
+.dados-perfil {
+    min-width: 0;
+}
+
 .dados-perfil h2 {
     margin: 0 0 4px;
     color: #ffffff;
     font-size: 19px;
     font-weight: 700;
     font-family: "Manrope", sans-serif;
+    overflow-wrap: anywhere;
 }
 
 .dados-perfil p {
@@ -112,6 +118,7 @@ main {
     color: #b9c5db;
     font-size: 10px;
     font-family: "Manrope", sans-serif;
+    overflow-wrap: anywhere;
 }
 
 .card {
@@ -129,6 +136,7 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
@@ -156,6 +164,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     color: #2463e9;
     font-size: 18px;
 }
@@ -238,13 +247,12 @@ main {
     border-radius: 7px;
     background: #2864e8;
     color: #ffffff;
-    font-family: inherit;
+    font-family: "Manrope", sans-serif;
     font-size: 11px;
     font-weight: 700;
     cursor: pointer;
     box-shadow: 0 7px 16px rgba(40, 100, 232, 0.18);
     transition: 0.2s ease;
-    font-family: "Manrope", sans-serif;
 }
 
 .botao-salvar span {
@@ -258,34 +266,79 @@ main {
     box-shadow: 0 9px 20px rgba(40, 100, 232, 0.24);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
+    .perfil-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
     main {
-        width: 100%;
-        margin-left: 0;
+        width: calc(100% - 220px);
+        margin-left: 220px;
     }
 
     .perfil-container {
-        padding: 30px 20px 40px;
+        padding: 35px 25px 50px;
+    }
+
+    .perfil-destaque {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: calc(100% - 76px);
+        margin-left: 76px;
+    }
+
+    .perfil-container {
+        padding: 30px 22px 45px;
+    }
+
+    .perfil-destaque {
+        padding: 24px 20px;
+    }
+
+    .foto-perfil {
+        width: 52px;
+        height: 52px;
+        font-size: 19px;
+    }
+
+    .dados-perfil h2 {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 21px 19px;
+    }
+}
+
+@media (max-width: 600px) {
+    .perfil-container {
+        padding: 25px 18px 40px;
+    }
+
+    .cabecalho h1 {
+        font-size: 25px;
     }
 
     .perfil-destaque {
         align-items: flex-start;
         flex-direction: column;
         gap: 20px;
+        padding: 23px 18px;
     }
 
     .botao-trocar-foto {
         align-self: flex-end;
     }
-}
 
-@media (max-width: 600px) {
     .campo {
         width: 100%;
-    }
-
-    .cabecalho h1 {
-        font-size: 25px;
     }
 
     .acoes {
@@ -294,5 +347,117 @@ main {
 
     .botao-salvar {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: calc(100% - 64px);
+        margin-left: 64px;
+    }
+
+    .perfil-container {
+        padding: 22px 14px 35px;
+    }
+
+    .cabecalho {
+        margin-bottom: 22px;
+    }
+
+    .cabecalho > span {
+        font-size: 9px;
+    }
+
+    .cabecalho h1 {
+        font-size: 23px;
+    }
+
+    .perfil-destaque {
+        min-height: 120px;
+        padding: 20px 15px;
+    }
+
+    .foto-perfil {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .dados-perfil h2 {
+        font-size: 16px;
+    }
+
+    .dados-perfil p {
+        font-size: 9px;
+    }
+
+    .card {
+        padding: 19px 15px;
+        margin-bottom: 13px;
+    }
+
+    .card-cabecalho {
+        margin-bottom: 17px;
+    }
+
+    .card-cabecalho h2 {
+        font-size: 14px;
+    }
+
+    .campo input {
+        height: 36px;
+    }
+
+    .campo textarea {
+        min-height: 80px;
+    }
+
+    .botao-salvar {
+        height: 44px;
+    }
+}
+
+@media (max-width: 360px) {
+    .perfil-container {
+        padding: 20px 11px 30px;
+    }
+
+    .cabecalho h1 {
+        font-size: 21px;
+    }
+
+    .perfil-destaque {
+        padding: 18px 13px;
+    }
+
+    .perfil-info {
+        gap: 10px;
+    }
+
+    .foto-perfil {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+
+    .dados-perfil h2 {
+        font-size: 14px;
+    }
+
+    .dados-perfil p {
+        font-size: 8px;
+    }
+
+    .card {
+        padding: 17px 12px;
+    }
+
+    .campo label {
+        font-size: 8px;
+    }
+
+    .campo input,
+    .campo textarea {
+        font-size: 9px;
     }
 }

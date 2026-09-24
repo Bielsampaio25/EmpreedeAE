@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    min-width: 0;
 }
 
 .site-nav-titulo img {
@@ -32,6 +33,7 @@
     font-family: "Manrope", sans-serif;
     font-size: 18px;
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .site-menu {
@@ -69,6 +71,7 @@
     font-weight: 600;
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
 }
 
 .botao-cabecalho:hover {
@@ -100,6 +103,7 @@
     flex-direction: column;
     justify-content: center;
     flex: 1;
+    min-width: 0;
 }
 
 .apresentacao-texto span {
@@ -118,6 +122,7 @@
     font-size: 64px;
     font-weight: 600;
     line-height: 1;
+    overflow-wrap: anywhere;
 }
 
 .apresentacao-imagem {
@@ -150,6 +155,7 @@
 
 .destaque-conteudo {
     width: 48%;
+    min-width: 0;
     animation: aparecer-conteudo 0.5s ease;
 }
 
@@ -166,6 +172,7 @@
     font-family: "Space Grotesk", sans-serif;
     font-size: 52px;
     line-height: 1;
+    overflow-wrap: anywhere;
 }
 
 .site-destaque p {
@@ -312,6 +319,7 @@
 .historia-titulo,
 .historia-texto {
     width: 50%;
+    min-width: 0;
 }
 
 .historia-titulo span {
@@ -327,6 +335,7 @@
     font-family: "Space Grotesk", sans-serif;
     font-size: 38px;
     line-height: 1.1;
+    overflow-wrap: anywhere;
 }
 
 .historia-texto p {
@@ -347,6 +356,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    gap: 25px;
     margin-bottom: 35px;
 }
 
@@ -377,6 +387,7 @@
 
 .produto {
     flex: 1;
+    min-width: 0;
     overflow: hidden;
     border: 1px solid #e1e6ef;
     border-radius: 8px;
@@ -408,6 +419,7 @@
     margin: 0 0 6px;
     color: #17213d;
     font-size: 14px;
+    overflow-wrap: anywhere;
 }
 
 .produto-informacoes span {
@@ -429,11 +441,14 @@
 .footer-conteudo {
     display: flex;
     justify-content: space-between;
+    gap: 60px;
     padding: 75px 70px;
+    box-sizing: border-box;
 }
 
 .footer-conteudo > div:first-child {
     max-width: 600px;
+    min-width: 0;
 }
 
 .site-footer span {
@@ -445,6 +460,7 @@
     font-family: "Space Grotesk", sans-serif;
     font-size: 42px;
     line-height: 1.05;
+    overflow-wrap: anywhere;
 }
 
 .footer-conteudo h2 strong {
@@ -456,6 +472,7 @@
     flex-direction: column;
     gap: 15px;
     padding-top: 35px;
+    min-width: 200px;
 }
 
 .footer-link {
@@ -474,6 +491,7 @@
     margin: 0;
     font-family: "Manrope", sans-serif;
     font-size: 13px;
+    overflow-wrap: anywhere;
 }
 
 .footer-final {
@@ -484,6 +502,7 @@
     background-color: rgba(0, 0, 0, 0.12);
     font-family: "Manrope", sans-serif;
     font-size: 11px;
+    box-sizing: border-box;
 }
 
 .footer-final strong {
@@ -520,13 +539,80 @@
     transform: translateY(-1px);
 }
 
-@media (max-width: 1000px) {
-
+@media (max-width: 1100px) {
     .site-nav {
-        padding: 0 25px;
+        padding: 0 28px;
     }
 
     .site-menu {
+        gap: 22px;
+    }
+
+    .site-apresentacao {
+        padding: 60px 50px;
+    }
+
+    .apresentacao-conteudo {
+        gap: 40px;
+    }
+
+    .apresentacao-texto h1 {
+        font-size: 56px;
+    }
+
+    .apresentacao-imagem {
+        width: 400px;
+        height: 260px;
+    }
+
+    .site-destaque {
+        padding: 55px 75px;
+        gap: 35px;
+    }
+
+    .site-destaque h2 {
+        font-size: 46px;
+    }
+
+    .destaque-imagem {
+        width: 420px;
+        height: 260px;
+    }
+
+    .site-historia {
+        padding: 70px 50px;
+    }
+
+    .site-produtos {
+        padding: 60px 50px;
+    }
+
+    .footer-conteudo {
+        padding: 65px 50px;
+    }
+
+    .footer-final {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .site-nav {
+        min-height: auto;
+        padding: 20px 25px;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .site-nav-titulo {
+        flex: 1;
+    }
+
+    .site-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 18px;
     }
 
@@ -535,96 +621,24 @@
     }
 
     .apresentacao-conteudo {
-        gap: 35px;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .apresentacao-texto h1 {
+        max-width: 700px;
         font-size: 52px;
     }
 
     .apresentacao-imagem {
-        width: 360px;
-        height: 240px;
-    }
-
-    .site-destaque {
-        padding: 50px 70px;
-        gap: 35px;
-    }
-
-    .site-destaque h2 {
-        font-size: 44px;
-    }
-
-    .destaque-imagem {
-        width: 400px;
-        height: 250px;
-    }
-
-    .site-historia {
-        padding: 65px 40px;
-    }
-
-    .site-produtos {
-        padding: 60px 40px;
-    }
-
-    .footer-conteudo {
-        padding: 65px 40px;
-    }
-
-    .footer-final {
-        padding: 20px 40px;
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .site-nav {
-        flex-wrap: wrap;
-        gap: 18px;
-        padding: 20px;
-    }
-
-    .site-nav-titulo {
         width: 100%;
-    }
-
-    .site-menu {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .botao-cabecalho {
-        width: 140px;
-    }
-
-    .site-apresentacao {
-        padding: 50px 25px;
-    }
-
-    .apresentacao-conteudo {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .apresentacao-texto h1 {
-        font-size: 46px;
-    }
-
-    .apresentacao-imagem {
-        width: 100%;
-        height: 260px;
+        height: 300px;
     }
 
     .site-destaque {
         flex-direction: column;
         align-items: stretch;
-        gap: 30px;
-        padding: 50px 60px 70px;
+        padding: 55px 65px 75px;
     }
 
     .destaque-conteudo {
@@ -632,26 +646,18 @@
     }
 
     .site-destaque h2 {
-        font-size: 42px;
+        font-size: 44px;
     }
 
     .destaque-imagem {
         width: 100%;
-        height: 260px;
-    }
-
-    .controle-carrossel.anterior {
-        left: 15px;
-    }
-
-    .controle-carrossel.proximo {
-        right: 15px;
+        height: 300px;
     }
 
     .site-historia {
         flex-direction: column;
         gap: 35px;
-        padding: 60px 25px;
+        padding: 60px 40px;
     }
 
     .historia-titulo,
@@ -660,25 +666,146 @@
     }
 
     .historia-titulo h2 {
-        font-size: 34px;
+        max-width: 600px;
     }
 
     .site-produtos {
+        padding: 55px 40px;
+    }
+
+    .produtos-conteudo {
+        flex-wrap: wrap;
+    }
+
+    .produto {
+        flex: 1 1 calc(50% - 9px);
+    }
+
+    .produto-imagem {
+        height: 210px;
+    }
+
+    .footer-conteudo {
+        padding: 60px 40px;
+    }
+
+    .footer-final {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 700px) {
+    .site-nav {
+        padding: 18px 20px;
+    }
+
+    .site-nav-titulo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .site-nav-titulo h1 {
+        font-size: 17px;
+    }
+
+    .site-menu {
+        gap: 14px 18px;
+    }
+
+    .site-menu a {
+        font-size: 12px;
+    }
+
+    .botao-cabecalho {
+        width: 140px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .site-apresentacao {
+        padding: 50px 25px;
+    }
+
+    .apresentacao-texto span {
+        font-size: 11px;
+    }
+
+    .apresentacao-texto h1 {
+        font-size: 44px;
+    }
+
+    .apresentacao-imagem {
+        height: 250px;
+        border-radius: 12px;
+    }
+
+    .site-destaque {
+        padding: 50px 55px 70px;
+    }
+
+    .site-destaque h2 {
+        font-size: 40px;
+    }
+
+    .site-destaque p {
+        font-size: 14px;
+    }
+
+    .destaque-imagem {
+        height: 250px;
+    }
+
+    .controle-carrossel {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .controle-carrossel.anterior {
+        left: 12px;
+    }
+
+    .controle-carrossel.proximo {
+        right: 12px;
+    }
+
+    .site-historia {
         padding: 55px 25px;
+    }
+
+    .historia-titulo h2 {
+        font-size: 34px;
+    }
+
+    .historia-texto p {
+        font-size: 14px;
+    }
+
+    .site-produtos {
+        padding: 50px 25px;
     }
 
     .produtos-cabecalho {
         align-items: flex-start;
-        gap: 15px;
         flex-direction: column;
+        gap: 12px;
+    }
+
+    .produtos-cabecalho h2 {
+        font-size: 31px;
     }
 
     .produtos-conteudo {
         flex-direction: column;
     }
 
+    .produto {
+        flex: 1;
+        width: 100%;
+    }
+
     .produto-imagem {
-        height: 220px;
+        height: 230px;
     }
 
     .footer-conteudo {
@@ -687,12 +814,13 @@
         padding: 55px 25px;
     }
 
-    .footer-conteudo h2 {
-        font-size: 36px;
+    .footer-contato {
+        min-width: 0;
+        padding-top: 0;
     }
 
-    .footer-contato {
-        padding-top: 0;
+    .footer-conteudo h2 {
+        font-size: 36px;
     }
 
     .footer-final {
@@ -704,67 +832,250 @@
     .footer-redes {
         margin-left: 0;
     }
-
 }
 
 @media (max-width: 480px) {
+    .site-nav {
+        padding: 16px;
+    }
+
+    .site-nav-titulo {
+        width: 100%;
+    }
+
+    .site-nav-titulo img {
+        width: 32px;
+        height: 32px;
+    }
 
     .site-nav-titulo h1 {
         font-size: 16px;
     }
 
     .site-menu {
-        gap: 14px;
+        gap: 11px 14px;
     }
 
     .site-menu a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .botao-cabecalho {
         width: 100%;
     }
 
+    .site-apresentacao {
+        padding: 42px 18px;
+    }
+
+    .apresentacao-texto span {
+        font-size: 10px;
+    }
+
     .apresentacao-texto h1 {
-        font-size: 38px;
+        font-size: 37px;
+        line-height: 1.05;
+    }
+
+    .apresentacao-imagem {
+        height: 210px;
     }
 
     .site-destaque {
-        padding: 45px 50px 65px;
+        padding: 42px 45px 65px;
+    }
+
+    .site-destaque span {
+        font-size: 11px;
     }
 
     .site-destaque h2 {
-        font-size: 36px;
+        margin-top: 17px;
+        font-size: 34px;
     }
 
-    .controle-carrossel {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
-    }
-
-    .controle-carrossel.anterior {
-        left: 10px;
-    }
-
-    .controle-carrossel.proximo {
-        right: 10px;
+    .site-destaque p {
+        font-size: 13px;
+        line-height: 1.6;
     }
 
     .botao-destaque {
         width: 100%;
     }
 
+    .destaque-imagem {
+        height: 210px;
+        border-radius: 9px;
+    }
+
+    .controle-carrossel {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .controle-carrossel.anterior {
+        left: 7px;
+    }
+
+    .controle-carrossel.proximo {
+        right: 7px;
+    }
+
+    .indicadores-carrossel {
+        bottom: 18px;
+    }
+
+    .site-historia {
+        padding: 45px 18px;
+        gap: 28px;
+    }
+
+    .historia-titulo span {
+        font-size: 10px;
+    }
+
     .historia-titulo h2 {
-        font-size: 30px;
+        font-size: 29px;
+    }
+
+    .historia-texto p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .site-produtos {
+        padding: 45px 18px;
+    }
+
+    .produtos-cabecalho span {
+        font-size: 10px;
     }
 
     .produtos-cabecalho h2 {
-        font-size: 30px;
+        font-size: 28px;
+    }
+
+    .produtos-cabecalho p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .produto-imagem {
+        height: 200px;
+    }
+
+    .produto-informacoes {
+        padding: 16px;
+    }
+
+    .footer-conteudo {
+        padding: 45px 18px;
+        gap: 35px;
     }
 
     .footer-conteudo h2 {
-        font-size: 31px;
+        font-size: 30px;
     }
 
+    .footer-contato p {
+        font-size: 12px;
+    }
+
+    .footer-final {
+        padding: 18px;
+        font-size: 10px;
+    }
+
+    .footer-redes {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-nav {
+        padding: 14px;
+    }
+
+    .site-nav-titulo h1 {
+        font-size: 14px;
+    }
+
+    .site-menu {
+        gap: 9px 11px;
+    }
+
+    .site-menu a {
+        font-size: 10px;
+    }
+
+    .site-apresentacao {
+        padding: 35px 14px;
+    }
+
+    .apresentacao-texto h1 {
+        font-size: 32px;
+    }
+
+    .apresentacao-imagem {
+        height: 180px;
+    }
+
+    .site-destaque {
+        padding: 38px 40px 60px;
+    }
+
+    .site-destaque h2 {
+        font-size: 30px;
+    }
+
+    .site-destaque p {
+        font-size: 12px;
+    }
+
+    .destaque-imagem {
+        height: 180px;
+    }
+
+    .controle-carrossel {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .site-historia {
+        padding: 38px 14px;
+    }
+
+    .historia-titulo h2 {
+        font-size: 26px;
+    }
+
+    .historia-texto p {
+        font-size: 12px;
+    }
+
+    .site-produtos {
+        padding: 38px 14px;
+    }
+
+    .produtos-cabecalho h2 {
+        font-size: 25px;
+    }
+
+    .produto-imagem {
+        height: 175px;
+    }
+
+    .footer-conteudo {
+        padding: 38px 14px;
+    }
+
+    .footer-conteudo h2 {
+        font-size: 27px;
+    }
+
+    .footer-final {
+        padding: 16px 14px;
+    }
 }

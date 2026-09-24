@@ -68,15 +68,13 @@ main {
     font-family: "Space Grotesk", sans-serif;
     font-size: 32px;
     font-weight: 700;
-    font-family: "Space Grotesk", sans-serif;
 }
 
 .planos-titulo p {
     margin: 0;
     color: #8b96a9;
-    font-family: "Manrope", sans-serif;
-    font-size: 15px;
     font-family: "Space Grotesk", sans-serif;
+    font-size: 15px;
 }
 
 .planos-cards {
@@ -229,7 +227,31 @@ main {
     color: #8b96a9;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+    .planos-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .cabecalho h1 {
+        font-size: 48px;
+    }
+
+    .plano-card {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 1024px) {
+    main {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
+
+    .planos-container {
+        padding: 40px 25px 50px;
+    }
+
     .cabecalho {
         margin-bottom: 80px;
     }
@@ -245,33 +267,101 @@ main {
     .plano-destaque {
         order: -1;
     }
+
+    .plano-card {
+        min-height: 470px;
+    }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     main {
-        width: 100%;
-        margin-left: 0;
+        width: calc(100% - 76px);
+        margin-left: 76px;
     }
 
     .planos-container {
-        padding: 35px 20px 50px;
+        padding: 35px 22px 45px;
     }
 
     .cabecalho {
-        margin-bottom: 60px;
+        margin-bottom: 65px;
     }
 
     .cabecalho h1 {
-        font-size: 36px;
-        letter-spacing: -1.5px;
+        font-size: 38px;
+        letter-spacing: -1.8px;
+    }
+
+    .cabecalho p {
+        font-size: 12px;
+    }
+
+    .planos-titulo {
+        margin-bottom: 35px;
     }
 
     .planos-titulo h2 {
-        font-size: 27px;
+        font-size: 28px;
+    }
+
+    .planos-titulo p {
+        font-size: 13px;
+    }
+
+    .planos-cards {
+        gap: 15px;
+    }
+
+    .plano-card {
+        padding: 25px;
+        min-height: 450px;
+    }
+
+    .plano-preco strong {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 600px) {
+    .planos-container {
+        padding: 30px 18px 40px;
+    }
+
+    .cabecalho {
+        margin-bottom: 55px;
+    }
+
+    .cabecalho > span {
+        margin-bottom: 16px;
+        font-size: 9px;
+    }
+
+    .cabecalho h1 {
+        font-size: 34px;
+        letter-spacing: -1.3px;
+    }
+
+    .cabecalho p {
+        margin-top: 18px;
+        font-size: 11px;
+    }
+
+    .planos-titulo {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .planos-titulo h2 {
+        font-size: 25px;
+    }
+
+    .planos-titulo p {
+        font-size: 12px;
     }
 
     .planos-cards {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .plano-destaque {
@@ -280,5 +370,155 @@ main {
 
     .plano-card {
         min-height: auto;
+        padding: 25px;
+    }
+
+    .plano-topo {
+        margin-bottom: 25px;
+    }
+
+    .plano-preco strong {
+        font-size: 40px;
+    }
+
+    .plano-descricao {
+        margin-bottom: 24px;
+    }
+
+    .plano-divisor {
+        margin: 25px 0 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: calc(100% - 64px);
+        margin-left: 64px;
+    }
+
+    .planos-container {
+        padding: 25px 14px 35px;
+    }
+
+    .cabecalho {
+        margin-bottom: 45px;
+    }
+
+    .cabecalho > span {
+        font-size: 8px;
+        letter-spacing: 0.12em;
+    }
+
+    .cabecalho h1 {
+        font-size: 30px;
+        line-height: 1.12;
+        letter-spacing: -1px;
+    }
+
+    .cabecalho p {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .planos-titulo {
+        margin-bottom: 25px;
+        padding: 0 5px;
+    }
+
+    .planos-titulo h2 {
+        font-size: 23px;
+    }
+
+    .planos-titulo p {
+        font-size: 11px;
+    }
+
+    .plano-card {
+        padding: 22px;
+        border-radius: 12px;
+    }
+
+    .plano-topo {
+        gap: 9px;
+        margin-bottom: 22px;
+    }
+
+    .plano-topo h2 {
+        font-size: 16px;
+    }
+
+    .plano-preco strong {
+        font-size: 37px;
+        letter-spacing: -1.5px;
+    }
+
+    .plano-preco span {
+        font-size: 10px;
+    }
+
+    .plano-descricao {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .plano-btn {
+        height: 50px;
+        font-size: 13px;
+    }
+
+    .plano-beneficios {
+        gap: 15px;
+    }
+
+    .plano-beneficios li {
+        gap: 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 360px) {
+    .planos-container {
+        padding: 22px 11px 30px;
+    }
+
+    .cabecalho {
+        margin-bottom: 38px;
+    }
+
+    .cabecalho h1 {
+        font-size: 27px;
+    }
+
+    .cabecalho p {
+        font-size: 9px;
+    }
+
+    .planos-titulo h2 {
+        font-size: 21px;
+    }
+
+    .planos-titulo p {
+        font-size: 10px;
+    }
+
+    .plano-card {
+        padding: 19px;
+    }
+
+    .plano-preco strong {
+        font-size: 34px;
+    }
+
+    .plano-btn {
+        height: 48px;
+        font-size: 12px;
+    }
+
+    .plano-card h3 {
+        font-size: 11px;
+    }
+
+    .plano-beneficios li {
+        font-size: 10px;
     }
 }

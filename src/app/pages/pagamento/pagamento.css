@@ -99,6 +99,7 @@ main {
     text-align: left;
     cursor: pointer;
     transition: 0.2s ease;
+    box-sizing: border-box;
 }
 
 .metodo:hover {
@@ -120,15 +121,17 @@ main {
     font-weight: 700;
 }
 
-.metodo-icone img{
+.metodo-icone img {
     width: 35px;
     height: 35px;
+    object-fit: contain;
 }
 
 .metodo-info {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .metodo-info strong {
@@ -156,7 +159,9 @@ main {
     gap: 18px;
 }
 
-
+.pix-imagem {
+    flex-shrink: 0;
+}
 
 .pix-imagem span {
     color: #ffffff;
@@ -386,6 +391,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
     border-bottom: 1px solid #e9edf3;
 }
 
@@ -405,6 +411,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
 }
 
 .resumo-total span {
@@ -433,9 +440,50 @@ main {
     line-height: 1;
 }
 
+@media (max-width: 1200px) {
+    .pagamento-layout {
+        gap: 30px;
+    }
 
+    .pagamento-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
-@media (max-width: 1000px) {
+    .cabecalho h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 1024px) {
+    main {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
+
+    .pagamento-layout {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 25px;
+    }
+
+    .pagamento-container {
+        padding: 25px 25px 50px;
+    }
+
+    .cabecalho h1 {
+        font-size: 38px;
+    }
+
+    .pagamento-card {
+        padding: 35px 18px 20px;
+    }
+
+    .resumo {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 900px) {
     .pagamento-layout {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -446,18 +494,22 @@ main {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     main {
-        width: 100%;
-        margin-left: 0;
+        width: calc(100% - 76px);
+        margin-left: 76px;
     }
 
     .pagamento-container {
-        padding: 25px 20px 50px;
+        padding: 25px 22px 45px;
     }
 
     .voltar {
         margin-bottom: 35px;
+    }
+
+    .cabecalho {
+        margin-bottom: 25px;
     }
 
     .cabecalho h1 {
@@ -465,12 +517,55 @@ main {
     }
 
     .metodos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .metodo {
+        min-height: 60px;
+        padding: 9px 11px;
+        gap: 9px;
+    }
+
+    .metodo-icone img {
+        width: 31px;
+        height: 31px;
+    }
+
+    .pagamento-card {
+        padding: 30px 18px 20px;
+    }
+
+    .resumo {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pagamento-container {
+        padding: 22px 18px 40px;
+    }
+
+    .cabecalho h1 {
+        font-size: 32px;
+        letter-spacing: -1.5px;
+    }
+
+    .cabecalho p {
+        font-size: 11px;
+    }
+
+    .metodos {
         grid-template-columns: 1fr;
+    }
+
+    .metodo {
+        min-height: 64px;
     }
 
     .pix-area {
         align-items: flex-start;
         flex-direction: column;
+        gap: 15px;
     }
 
     .pix-imagem {
@@ -478,9 +573,17 @@ main {
         height: 100px;
     }
 
+    .pix-conteudo {
+        width: 100%;
+    }
+
     .pix-codigo {
         align-items: stretch;
         flex-direction: column;
+    }
+
+    .pix-codigo span {
+        width: 100%;
     }
 
     .pix-codigo button {
@@ -493,5 +596,110 @@ main {
 
     .botao-concluir {
         margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: calc(100% - 64px);
+        margin-left: 64px;
+    }
+
+    .pagamento-container {
+        padding: 20px 14px 35px;
+    }
+
+    .voltar {
+        margin-bottom: 28px;
+        font-size: 10px;
+    }
+
+    .voltar span {
+        font-size: 16px;
+    }
+
+    .cabecalho > span {
+        margin-bottom: 15px;
+        font-size: 9px;
+    }
+
+    .cabecalho h1 {
+        margin-bottom: 10px;
+        font-size: 29px;
+        letter-spacing: -1px;
+    }
+
+    .cabecalho p {
+        font-size: 10px;
+    }
+
+    .pagamento-card {
+        padding: 25px 14px 17px;
+    }
+
+    .cartao-cabecalho {
+        margin-bottom: 20px;
+    }
+
+    .cartao-cabecalho h2 {
+        font-size: 18px;
+    }
+
+    .formulario-cartao {
+        gap: 13px;
+    }
+
+    .campo input {
+        height: 42px;
+    }
+
+    .resumo {
+        padding: 22px 16px;
+    }
+
+    .resumo h2 {
+        font-size: 19px;
+    }
+
+    .resumo-preco strong {
+        font-size: 27px;
+    }
+
+    .resumo-total strong {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 360px) {
+    .pagamento-container {
+        padding: 18px 11px 30px;
+    }
+
+    .cabecalho h1 {
+        font-size: 26px;
+    }
+
+    .metodo {
+        padding: 9px;
+    }
+
+    .metodo-info strong {
+        font-size: 10px;
+    }
+
+    .metodo-info span {
+        font-size: 8px;
+    }
+
+    .pagamento-card {
+        padding: 22px 12px 15px;
+    }
+
+    .pix-conteudo h2 {
+        font-size: 17px;
+    }
+
+    .resumo {
+        padding: 20px 14px;
     }
 }

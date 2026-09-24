@@ -27,7 +27,7 @@ main {
 }
 
 .cabecalho h1 {
-   margin: 5px 0 0;
+    margin: 5px 0 0;
     color: #14213d;
     font-family: "Space Grotesk", sans-serif;
     font-size: 34px;
@@ -127,6 +127,7 @@ main {
 }
 
 .campo-mensagem input {
+    min-width: 0;
     flex: 1;
     height: 100%;
     border: none;
@@ -144,6 +145,7 @@ main {
 .campo-mensagem button {
     width: 36px;
     height: 36px;
+    flex-shrink: 0;
     border: none;
     border-radius: 5px;
     background: #151515;
@@ -163,4 +165,174 @@ main {
 .campo-mensagem button span {
     font-size: 18px;
     line-height: 1;
+}
+
+@media (max-width: 1024px) {
+    main {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
+
+    .pagina {
+        padding: 32px 28px 45px;
+    }
+
+    .chat {
+        min-height: 540px;
+        padding: 30px 25px 22px;
+    }
+
+    .mensagem {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: calc(100% - 76px);
+        margin-left: 76px;
+    }
+
+    .pagina {
+        padding: 28px 22px 40px;
+    }
+
+    .cabecalho {
+        margin-bottom: 22px;
+    }
+
+    .cabecalho h1 {
+        font-size: 30px;
+    }
+
+    .chat {
+        min-height: 520px;
+        padding: 25px 20px 20px;
+    }
+
+    .mensagens {
+        gap: 24px;
+    }
+
+    .mensagem {
+        max-width: 80%;
+    }
+
+    .balao {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: calc(100% - 64px);
+        margin-left: 64px;
+    }
+
+    .pagina {
+        padding: 24px 14px 30px;
+    }
+
+    .cabecalho {
+        margin-bottom: 18px;
+    }
+
+    .cabecalho span {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .cabecalho h1 {
+        margin-top: 4px;
+        font-size: 25px;
+    }
+
+    .chat {
+        min-height: 500px;
+        padding: 20px 14px 15px;
+        border-radius: 7px;
+    }
+
+    .mensagens {
+        gap: 20px;
+    }
+
+    .mensagem {
+        max-width: 88%;
+    }
+
+    .nome {
+        margin-bottom: 5px;
+        font-size: 9px;
+    }
+
+    .balao {
+        max-width: 240px;
+        padding: 10px 11px 19px;
+        font-size: 10px;
+    }
+
+    .status {
+        right: 7px;
+        bottom: 4px;
+        font-size: 10px;
+    }
+
+    .campo-mensagem {
+        height: 46px;
+        margin-top: 22px;
+        padding-left: 12px;
+    }
+
+    .campo-mensagem input {
+        font-size: 11px;
+    }
+
+    .campo-mensagem button {
+        width: 34px;
+        height: 34px;
+    }
+
+    .campo-mensagem button span {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 360px) {
+    main {
+        width: calc(100% - 64px);
+        margin-left: 64px;
+    }
+
+    .pagina {
+        padding: 20px 10px 25px;
+    }
+
+    .cabecalho h1 {
+        font-size: 23px;
+    }
+
+    .chat {
+        min-height: 480px;
+        padding: 17px 10px 12px;
+    }
+
+    .mensagem {
+        max-width: 92%;
+    }
+
+    .balao {
+        max-width: 210px;
+        font-size: 9px;
+    }
+
+    .campo-mensagem {
+        height: 44px;
+        padding-left: 10px;
+    }
+
+    .campo-mensagem button {
+        width: 32px;
+        height: 32px;
+    }
 }

@@ -62,6 +62,7 @@ main {
 }
 
 .descricao {
+    width: 100%;
     max-width: 600px;
     margin: 22px auto 32px;
     color: #7b8aa1;
@@ -141,14 +142,60 @@ main {
     color: #2864e8;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
+    .confirmacao {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .confirmacao h1 {
+        font-size: 40px;
+    }
+
+    .descricao {
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 1024px) {
     main {
-        width: 100%;
-        margin-left: 0;
+        width: calc(100% - 220px);
+        margin-left: 220px;
     }
 
     .confirmacao {
-        padding: 30px 20px 50px;
+        padding: 20px 25px 50px;
+    }
+
+    .confirmacao h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: calc(100% - 76px);
+        margin-left: 76px;
+    }
+
+    .confirmacao {
+        padding: 30px 22px 45px;
+    }
+
+    .icone-sucesso {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 25px;
+    }
+
+    .icone-sucesso span {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .subtitulo {
+        margin-bottom: 20px;
     }
 
     .confirmacao h1 {
@@ -157,16 +204,171 @@ main {
     }
 
     .descricao {
+        max-width: 540px;
+        margin-top: 18px;
+        margin-bottom: 28px;
         font-size: 11px;
-    }
-
-    .desktop {
-        display: none;
     }
 
     .plano-selecionado {
         width: 100%;
         max-width: 420px;
-        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .confirmacao {
+        padding: 25px 18px 40px;
+    }
+
+    .icone-sucesso {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 23px;
+    }
+
+    .icone-sucesso span {
+        width: 34px;
+        height: 34px;
+        font-size: 19px;
+    }
+
+    .confirmacao h1 {
+        max-width: 450px;
+        font-size: 31px;
+    }
+
+    .descricao {
+        max-width: 480px;
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .plano-selecionado {
+        min-height: 48px;
+        padding: 0 14px;
+    }
+
+    .botao-painel {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: calc(100% - 64px);
+        margin-left: 64px;
+    }
+
+    .confirmacao {
+        padding: 25px 14px 35px;
+    }
+
+    .icone-sucesso {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 21px;
+    }
+
+    .icone-sucesso span {
+        width: 32px;
+        height: 32px;
+        border-width: 2px;
+        font-size: 18px;
+    }
+
+    .subtitulo {
+        margin-bottom: 17px;
+        font-size: 8px;
+        letter-spacing: 0.14em;
+    }
+
+    .confirmacao h1 {
+        font-size: 28px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+    }
+
+    .descricao {
+        margin: 17px auto 25px;
+        font-size: 10px;
+        line-height: 1.65;
+    }
+
+    .plano-selecionado {
+        min-height: 48px;
+        padding: 0 12px;
+        gap: 12px;
+    }
+
+    .plano-selecionado span,
+    .plano-selecionado strong {
+        font-size: 9px;
+    }
+
+    .botao-painel {
+        height: 43px;
+        margin-top: 24px;
+        font-size: 10px;
+    }
+
+    .botao-painel span {
+        font-size: 18px;
+    }
+
+    .voltar-planos {
+        margin-top: 23px;
+        font-size: 9px;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .confirmacao {
+        padding: 20px 11px 30px;
+    }
+
+    .icone-sucesso {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 18px;
+    }
+
+    .icone-sucesso span {
+        width: 29px;
+        height: 29px;
+        font-size: 16px;
+    }
+
+    .subtitulo {
+        font-size: 7px;
+    }
+
+    .confirmacao h1 {
+        font-size: 25px;
+    }
+
+    .descricao {
+        font-size: 9px;
+        margin-top: 15px;
+        margin-bottom: 22px;
+    }
+
+    .plano-selecionado {
+        min-height: 45px;
+        padding: 0 10px;
+    }
+
+    .plano-selecionado span,
+    .plano-selecionado strong {
+        font-size: 8px;
+    }
+
+    .botao-painel {
+        max-width: 220px;
     }
 }
