@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
+
 main {
     width: calc(100% - 244px);
     min-height: 100vh;
@@ -25,6 +27,7 @@ main {
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.15em;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .cabecalho h1 {
@@ -33,6 +36,7 @@ main {
     font-size: 29px;
     line-height: 1.2;
     font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .perfil-destaque {
@@ -100,12 +104,14 @@ main {
     color: #ffffff;
     font-size: 19px;
     font-weight: 700;
+    font-family: "Manrope", sans-serif;
 }
 
 .dados-perfil p {
     margin: 0;
     color: #b9c5db;
     font-size: 10px;
+    font-family: "Manrope", sans-serif;
 }
 
 .card {
@@ -133,6 +139,7 @@ main {
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 0.14em;
+    font-family: "Manrope", sans-serif;
 }
 
 .card-cabecalho h2 {
@@ -140,6 +147,7 @@ main {
     color: #1c355c;
     font-size: 15px;
     font-weight: 700;
+    font-family: "Manrope", sans-serif;
 }
 
 .icone-card {
@@ -173,6 +181,7 @@ main {
     color: #52627a;
     font-size: 9px;
     font-weight: 600;
+    font-family: "Manrope", sans-serif;
 }
 
 .campo input,
@@ -235,6 +244,7 @@ main {
     cursor: pointer;
     box-shadow: 0 7px 16px rgba(40, 100, 232, 0.18);
     transition: 0.2s ease;
+    font-family: "Manrope", sans-serif;
 }
 
 .botao-salvar span {

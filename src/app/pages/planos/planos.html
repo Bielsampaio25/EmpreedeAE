@@ -70,7 +70,8 @@
                         Para quem está em movimento
                     </p>
 
-                    <button routerLink="/pagamento" class="plano-btn plano-btn-destaque">
+                    <button [routerLink]="['/pagamento']" [queryParams]="{ plano: 'Profissional', valor: 29 }"
+                        class="plano-btn plano-btn-destaque">
                         Escolher plano
                         <span>→</span>
                     </button>
@@ -104,7 +105,8 @@
                         Para marcas prontas para crescer
                     </p>
 
-                    <button routerLink="/pagamento" class="plano-btn">
+                    <button [routerLink]="['/pagamento']" [queryParams]="{ plano: 'Negócio', valor: 79 }"
+                        class="plano-btn">
                         Escolher plano
                         <span>→</span>
                     </button>

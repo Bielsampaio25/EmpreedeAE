@@ -23,7 +23,7 @@ export class Cadastro {
     constructor(
         private cadastroService: CadastroService,
         private router: Router
-    ) { }
+    ) {}
 
     cadastrar() {
 

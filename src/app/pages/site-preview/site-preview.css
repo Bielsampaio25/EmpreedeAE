@@ -17,8 +17,9 @@
 .site-nav-titulo img {
     width: 38px;
     height: 38px;
+    object-fit: contain;
     border-radius: 6px;
-    background-color: #2563eb;
+    flex-shrink: 0;
 }
 
 .site-nav-titulo h1 {
@@ -47,7 +48,13 @@
 .site-nav button {
     width: 155px;
     height: 42px;
+    border: none;
+    border-radius: 6px;
     background-color: #2563eb;
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 .site-destaque {
@@ -66,6 +73,9 @@
 
 .site-destaque span {
     color: #ff6b00;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .site-destaque h2 {
@@ -85,15 +95,35 @@
     line-height: 1.7;
 }
 
-.site-destaque button {
+.botao-destaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 210px;
     height: 45px;
-    background-color: #ff6b00;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .destaque-imagem {
-    width: 40%;
+    width: 480px;
     height: 280px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #dfe3f5;
+    flex-shrink: 0;
+}
+
+.destaque-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .site-momentos {
@@ -112,6 +142,8 @@
 .site-historia span,
 .site-produtos span {
     color: #71809a;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
 }
 
 .momentos-cabecalho h2,
@@ -194,6 +226,7 @@
     padding: 80px 70px;
     background-color: white;
     border-top: 1px solid #f0f2f6;
+    box-sizing: border-box;
 }
 
 .historia-titulo,
@@ -218,6 +251,7 @@
 .site-produtos {
     padding: 70px;
     background-color: #f7f8fc;
+    box-sizing: border-box;
 }
 
 .produtos-cabecalho {
@@ -241,8 +275,17 @@
 }
 
 .produto-imagem {
+    width: 100%;
     height: 170px;
+    overflow: hidden;
     background-color: #eeeffc;
+}
+
+.produto-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .produto-informacoes {

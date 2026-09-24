@@ -297,7 +297,7 @@ main{
 .comunidade-texto{
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    padding-left: 60px;
     gap: 20px;
 }
 .comunidade-texto h1{

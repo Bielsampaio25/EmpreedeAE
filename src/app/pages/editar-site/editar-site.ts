@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { Sidebar } from '../../componentes/sidebar/sidebar';
 import { SiteModel } from '../../models/siteModel';
 import { SiteService } from '../../services/site-service';
 
 @Component({
     selector: 'app-editar-site',
-    imports: [CommonModule, FormsModule, Sidebar],
+    imports: [CommonModule, FormsModule, RouterLink, Sidebar],
     templateUrl: './editar-site.html',
     styleUrl: './editar-site.css'
 })
@@ -82,7 +83,7 @@ export class EditarSite {
         }
     };
 
-    constructor(private siteService: SiteService) { }
+    constructor(private siteService: SiteService) {}
 
     ngOnInit() {
         const siteSalvo = this.siteService.buscarSite();
@@ -119,16 +120,71 @@ export class EditarSite {
         this.site.url = primeiraPalavra + outrasPalavras;
     }
 
+    selecionarLogo(event: Event) {
+        const input = event.target as HTMLInputElement;
+
+        if (!input.files || input.files.length === 0) {
+            return;
+        }
+
+        const arquivo = input.files[0];
+
+        const leitor = new FileReader();
+
+        leitor.onload = () => {
+            this.site.logo = leitor.result as string;
+        };
+
+        leitor.readAsDataURL(arquivo);
+    }
+
+    selecionarImagemProduto(event: Event, index: number) {
+        const input = event.target as HTMLInputElement;
+
+        if (!input.files || input.files.length === 0) {
+            return;
+        }
+
+        const arquivo = input.files[0];
+
+        const leitor = new FileReader();
+
+        leitor.onload = () => {
+            this.site.produtos[index].imagem = leitor.result as string;
+        };
+
+        leitor.readAsDataURL(arquivo);
+    }
+
+    selecionarImagemCarrossel(event: Event, index: number) {
+        const input = event.target as HTMLInputElement;
+
+        if (!input.files || input.files.length === 0) {
+            return;
+        }
+
+        const arquivo = input.files[0];
+
+        const leitor = new FileReader();
+
+        leitor.onload = () => {
+            this.site.cardsCarrossel[index].imagem = leitor.result as string;
+        };
+
+        leitor.readAsDataURL(arquivo);
+    }
+
     salvarAlteracoes() {
         this.gerarUrl();
         this.siteService.salvarSite(this.site);
-
         console.log('Site salvo:', this.site);
     }
 
     copiarUrl() {
-        const url = window.location.origin + '/site/' + this.site.url;
+        const url = this.enderecoBase + '/site/' + this.site.url;
+
         navigator.clipboard.writeText(url);
+
         console.log('URL copiada:', url);
     }
 
