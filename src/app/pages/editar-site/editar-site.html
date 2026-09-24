@@ -9,7 +9,12 @@
         </div>
 
         <div class="acoes-pagina">
-            <button type="button" class="botao-secundario">Visualizar site</button>
+            <button
+                type="button"
+                class="botao-secundario"
+            >
+                Visualizar site
+            </button>
 
             <button
                 type="button"
@@ -17,6 +22,38 @@
                 (click)="salvarAlteracoes()"
             >
                 Salvar alterações
+            </button>
+        </div>
+    </section>
+
+    <section class="url-site">
+        <div class="url-site-cabecalho">
+            <div>
+                <span class="subtitulo-pagina">ENDEREÇO DO SITE</span>
+                <h2>Seu site está disponível em</h2>
+                <p>
+                    Compartilhe esse endereço para que outras pessoas possam acessar seu site.
+                </p>
+            </div>
+        </div>
+
+        <div class="url-site-conteudo">
+            <div class="url-site-campo">
+                <span>http://site/</span>
+
+                <input
+                    type="text"
+                    [value]="site.url"
+                    readonly
+                >
+            </div>
+
+            <button
+                type="button"
+                class="botao-copiar"
+                (click)="copiarUrl()"
+            >
+                Copiar URL
             </button>
         </div>
     </section>
@@ -41,6 +78,7 @@
                         <div class="upload-imagem">
                             <div class="preview-logo">
                                 <img
+                                    *ngIf="site.logo"
                                     [src]="site.logo"
                                     alt="Logo do empreendimento"
                                 >
@@ -70,6 +108,7 @@
                                 type="text"
                                 id="nome-negocio"
                                 [(ngModel)]="site.nomeNegocio"
+                                (ngModelChange)="gerarUrl()"
                                 placeholder="Ex.: Gabriel Camisetas"
                             >
 

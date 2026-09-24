@@ -19,20 +19,12 @@ export class EditarSite {
         nomeNegocio: 'Gabriel Camisetas',
         corNome: '#17213D',
         logo: '',
+        url: '',
 
         linksNavegacao: [
-            {
-                nome: 'Sobre',
-                endereco: '#sobre'
-            },
-            {
-                nome: 'Produtos',
-                endereco: '#produtos'
-            },
-            {
-                nome: 'Contato',
-                endereco: '#contato'
-            }
+            { nome: 'Sobre', endereco: '#sobre' },
+            { nome: 'Produtos', endereco: '#produtos' },
+            { nome: 'Contato', endereco: '#contato' }
         ],
 
         botaoCabecalho: {
@@ -82,23 +74,14 @@ export class EditarSite {
         rodape: {
             subtitulo: 'VAMOS CONVERSAR?',
             links: [
-                {
-                    nome: 'E-mail',
-                    informacao: 'oi@gabrielcamisetas.com'
-                },
-                {
-                    nome: 'Telefone',
-                    informacao: '(11) 99876-2210'
-                },
-                {
-                    nome: 'Localização',
-                    informacao: 'São Paulo, SP'
-                }
+                { nome: 'E-mail', informacao: 'oi@gabrielcamisetas.com' },
+                { nome: 'Telefone', informacao: '(11) 99876-2210' },
+                { nome: 'Localização', informacao: 'São Paulo, SP' }
             ]
         }
     };
 
-    constructor(private siteService: SiteService) {}
+    constructor(private siteService: SiteService) { }
 
     ngOnInit() {
         const siteSalvo = this.siteService.buscarSite();
@@ -106,11 +89,46 @@ export class EditarSite {
         if (siteSalvo) {
             this.site = siteSalvo;
         }
+
+        this.gerarUrl();
+    }
+
+    gerarUrl() {
+        const nome = this.site.nomeNegocio
+            .trim()
+            .replace(/[^a-zA-ZÀ-ÿ0-9 ]/g, '')
+            .split(' ')
+            .filter(palavra => palavra.length > 0);
+
+        if (nome.length === 0) {
+            this.site.url = '';
+            return;
+        }
+
+        const primeiraPalavra = nome[0].toLowerCase();
+
+        const outrasPalavras = nome
+            .slice(1)
+            .map(palavra =>
+                palavra.charAt(0).toUpperCase() +
+                palavra.slice(1).toLowerCase()
+            )
+            .join('');
+
+        this.site.url = primeiraPalavra + outrasPalavras;
     }
 
     salvarAlteracoes() {
+        this.gerarUrl();
         this.siteService.salvarSite(this.site);
+
         console.log('Site salvo:', this.site);
+    }
+
+    copiarUrl() {
+        const url = window.location.origin + '/site/' + this.site.url;
+        navigator.clipboard.writeText(url);
+        console.log('URL copiada:', url);
     }
 
     adicionarLinkNavegacao() {

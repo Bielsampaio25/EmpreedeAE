@@ -2,6 +2,7 @@ export interface SiteModel {
     nomeNegocio: string;
     corNome: string;
     logo: string;
+    url: string;
 
     linksNavegacao: {
         nome: string;
