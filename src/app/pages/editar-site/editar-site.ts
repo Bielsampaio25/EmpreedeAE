@@ -23,15 +23,31 @@ export class EditarSite {
         logo: '',
         url: '',
 
+        apresentacao: {
+            subtitulo: 'FEITO PARA A SUA MARCA',
+            titulo: 'Gabriel Camisetas',
+            imagem: ''
+        },
+
         linksNavegacao: [
-            { nome: 'Sobre', endereco: '#sobre' },
-            { nome: 'Produtos', endereco: '#produtos' },
-            { nome: 'Contato', endereco: '#contato' }
+            {
+                nome: 'Sobre',
+                endereco: '#sobre'
+            },
+            {
+                nome: 'Produtos',
+                endereco: '#produtos'
+            },
+            {
+                nome: 'Contato',
+                endereco: '#contato'
+            }
         ],
 
         botaoCabecalho: {
             texto: 'Falar com a marca',
-            cor: '#2563EB'
+            cor: '#2563EB',
+            link: 'https://instagram.com'
         },
 
         historia: {
@@ -68,34 +84,73 @@ export class EditarSite {
                 descricao: 'Camisetas autorais e personalizadas para transformar histórias em identidade.',
                 imagem: '',
                 textoBotao: 'Conheça nossos produtos',
-                linkBotao: '#produtos',
+                linkBotao: 'https://instagram.com',
                 corBotao: '#FF6B00'
             }
         ],
 
         rodape: {
             subtitulo: 'VAMOS CONVERSAR?',
+            titulo: 'Seu próximo projeto começa aqui.',
+            corFundo: '#141d30',
+            corTexto: '#ffffff',
             links: [
-                { nome: 'E-mail', informacao: 'oi@gabrielcamisetas.com' },
-                { nome: 'Telefone', informacao: '(11) 99876-2210' },
-                { nome: 'Localização', informacao: 'São Paulo, SP' }
+                {
+                    nome: 'E-mail',
+                    informacao: 'oi@gabrielcamisetas.com'
+                },
+                {
+                    nome: 'Telefone',
+                    informacao: '(11) 99876-2210'
+                },
+                {
+                    nome: 'Localização',
+                    informacao: 'São Paulo, SP'
+                }
             ]
         }
     };
 
-    constructor(private siteService: SiteService) {}
+    constructor(private siteService: SiteService) { }
 
     ngOnInit() {
+
         const siteSalvo = this.siteService.buscarSite();
 
         if (siteSalvo) {
+
             this.site = siteSalvo;
+
+            if (!this.site.apresentacao) {
+
+                this.site.apresentacao = {
+                    subtitulo: 'FEITO PARA A SUA MARCA',
+                    titulo: this.site.nomeNegocio,
+                    imagem: ''
+                };
+
+            }
+
+            if (!this.site.botaoCabecalho.link) {
+                this.site.botaoCabecalho.link = 'https://instagram.com';
+            }
+
+            if (!this.site.rodape.corFundo) {
+                this.site.rodape.corFundo = '#141d30';
+            }
+
+            if (!this.site.rodape.corTexto) {
+                this.site.rodape.corTexto = '#ffffff';
+            }
+
         }
 
         this.gerarUrl();
+
     }
 
     gerarUrl() {
+
         const nome = this.site.nomeNegocio
             .trim()
             .replace(/[^a-zA-ZÀ-ÿ0-9 ]/g, '')
@@ -103,8 +158,11 @@ export class EditarSite {
             .filter(palavra => palavra.length > 0);
 
         if (nome.length === 0) {
+
             this.site.url = '';
+
             return;
+
         }
 
         const primeiraPalavra = nome[0].toLowerCase();
@@ -118,9 +176,34 @@ export class EditarSite {
             .join('');
 
         this.site.url = primeiraPalavra + outrasPalavras;
+
+    }
+
+    validarLink(link: string): boolean {
+
+        if (!link || !link.trim()) {
+            return false;
+        }
+
+        try {
+
+            const url = new URL(link.trim());
+
+            return (
+                url.protocol === 'http:' ||
+                url.protocol === 'https:'
+            );
+
+        } catch {
+
+            return false;
+
+        }
+
     }
 
     selecionarLogo(event: Event) {
+
         const input = event.target as HTMLInputElement;
 
         if (!input.files || input.files.length === 0) {
@@ -136,9 +219,31 @@ export class EditarSite {
         };
 
         leitor.readAsDataURL(arquivo);
+
+    }
+
+    selecionarImagemApresentacao(event: Event) {
+
+        const input = event.target as HTMLInputElement;
+
+        if (!input.files || input.files.length === 0) {
+            return;
+        }
+
+        const arquivo = input.files[0];
+
+        const leitor = new FileReader();
+
+        leitor.onload = () => {
+            this.site.apresentacao.imagem = leitor.result as string;
+        };
+
+        leitor.readAsDataURL(arquivo);
+
     }
 
     selecionarImagemProduto(event: Event, index: number) {
+
         const input = event.target as HTMLInputElement;
 
         if (!input.files || input.files.length === 0) {
@@ -154,9 +259,11 @@ export class EditarSite {
         };
 
         leitor.readAsDataURL(arquivo);
+
     }
 
     selecionarImagemCarrossel(event: Event, index: number) {
+
         const input = event.target as HTMLInputElement;
 
         if (!input.files || input.files.length === 0) {
@@ -172,47 +279,93 @@ export class EditarSite {
         };
 
         leitor.readAsDataURL(arquivo);
+
     }
 
     salvarAlteracoes() {
+
         this.gerarUrl();
+
+        const linkCabecalho = this.site.botaoCabecalho.link.trim();
+
+        if (!this.validarLink(linkCabecalho)) {
+
+            alert(
+                'Informe um link válido para o botão do cabeçalho.\n\nExemplo: https://instagram.com/suaempresa'
+            );
+
+            return;
+
+        }
+
+        for (const card of this.site.cardsCarrossel) {
+
+            const link = card.linkBotao.trim();
+
+            if (!this.validarLink(link)) {
+
+                alert(
+                    `O link do card "${card.titulo || 'sem título'}" é inválido.\n\nExemplo: https://instagram.com/suaempresa`
+                );
+
+                return;
+
+            }
+
+        }
+
         this.siteService.salvarSite(this.site);
+
         console.log('Site salvo:', this.site);
+
+        alert('Alterações salvas com sucesso!');
+
     }
 
     copiarUrl() {
+
         const url = this.enderecoBase + '/site/' + this.site.url;
 
         navigator.clipboard.writeText(url);
 
         console.log('URL copiada:', url);
+
     }
 
     adicionarLinkNavegacao() {
+
         this.site.linksNavegacao.push({
             nome: '',
             endereco: ''
         });
+
     }
 
     removerLinkNavegacao(index: number) {
+
         this.site.linksNavegacao.splice(index, 1);
+
     }
 
     adicionarProduto() {
+
         this.site.produtos.push({
             titulo: '',
             descricao: '',
             preco: '',
             imagem: ''
         });
+
     }
 
     removerProduto(index: number) {
+
         this.site.produtos.splice(index, 1);
+
     }
 
     adicionarCardCarrossel() {
+
         this.site.cardsCarrossel.push({
             subtitulo: '',
             titulo: '',
@@ -222,20 +375,28 @@ export class EditarSite {
             linkBotao: '',
             corBotao: '#FF6B00'
         });
+
     }
 
     removerCardCarrossel(index: number) {
+
         this.site.cardsCarrossel.splice(index, 1);
+
     }
 
     adicionarLinkRodape() {
+
         this.site.rodape.links.push({
             nome: '',
             informacao: ''
         });
+
     }
 
     removerLinkRodape(index: number) {
+
         this.site.rodape.links.splice(index, 1);
+
     }
+
 }

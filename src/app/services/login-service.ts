@@ -7,6 +7,7 @@ import { UsuarioModel } from '../models/usuario-model';
 export class LoginService {
 
     login(email: string, senha: string): boolean {
+
         const dados = localStorage.getItem('usuario');
 
         if (!dados) {
@@ -15,6 +16,14 @@ export class LoginService {
 
         const usuario: UsuarioModel = JSON.parse(dados);
 
-        return usuario.email === email && usuario.senha === senha;
+        if (
+            usuario.email === email &&
+            usuario.senha === senha
+        ) {
+            localStorage.setItem('autenticado', 'true');
+            return true;
+        }
+
+        return false;
     }
 }

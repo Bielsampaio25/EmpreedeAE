@@ -4,6 +4,12 @@ export interface SiteModel {
     logo: string;
     url: string;
 
+    apresentacao: {
+        subtitulo: string;
+        titulo: string;
+        imagem: string;
+    };
+
     linksNavegacao: {
         nome: string;
         endereco: string;
@@ -12,6 +18,7 @@ export interface SiteModel {
     botaoCabecalho: {
         texto: string;
         cor: string;
+        link: string;
     };
 
     historia: {
@@ -39,6 +46,9 @@ export interface SiteModel {
 
     rodape: {
         subtitulo: string;
+        titulo: string;
+        corFundo: string;
+        corTexto: string;
         links: {
             nome: string;
             informacao: string;

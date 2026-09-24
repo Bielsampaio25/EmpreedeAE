@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { SiteModel } from '../../models/siteModel';
 import { SiteService } from '../../services/site-service';
+
 
 @Component({
     selector: 'app-site-preview',
@@ -11,20 +10,57 @@ import { SiteService } from '../../services/site-service';
     styleUrl: './site-preview.css'
 })
 export class SitePreview {
-    anoAtual = new Date().getFullYear();
-    site: SiteModel | null = null;
 
-    constructor(
-        private siteService: SiteService,
-        private route: ActivatedRoute
-    ) {}
+    site: any = null;
+    anoAtual = new Date().getFullYear();
+
+    cardAtual = 0;
+    intervaloCarrossel: any;
+
+    constructor(private siteService: SiteService) {}
 
     ngOnInit() {
         this.site = this.siteService.buscarSite();
 
-        const url = this.route.snapshot.paramMap.get('url');
+        this.iniciarCarrossel();
+    }
 
-        console.log('URL acessada:', url);
-        console.log('Site carregado:', this.site);
+    iniciarCarrossel() {
+        if (!this.site?.cardsCarrossel?.length || this.site.cardsCarrossel.length <= 1) {
+            return;
+        }
+
+        this.intervaloCarrossel = setInterval(() => {
+            this.proximoCard();
+        }, 5000);
+    }
+
+    proximoCard() {
+        if (!this.site?.cardsCarrossel?.length) {
+            return;
+        }
+
+        this.cardAtual =
+            (this.cardAtual + 1) % this.site.cardsCarrossel.length;
+    }
+
+    cardAnterior() {
+        if (!this.site?.cardsCarrossel?.length) {
+            return;
+        }
+
+        this.cardAtual =
+            (this.cardAtual - 1 + this.site.cardsCarrossel.length) %
+            this.site.cardsCarrossel.length;
+    }
+
+    selecionarCard(index: number) {
+        this.cardAtual = index;
+    }
+
+    ngOnDestroy() {
+        if (this.intervaloCarrossel) {
+            clearInterval(this.intervaloCarrossel);
+        }
     }
 }

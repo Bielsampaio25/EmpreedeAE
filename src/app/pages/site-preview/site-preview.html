@@ -1,121 +1,124 @@
 <nav class="site-nav">
+
     <div class="site-nav-titulo">
-        <img
-            *ngIf="site?.logo"
-            [src]="site?.logo"
-            alt="Logo do negócio"
-        >
+
+        <img *ngIf="site?.logo" [src]="site?.logo" alt="Logo do negócio">
 
         <h1 [style.color]="site?.corNome">
             {{ site?.nomeNegocio }}
         </h1>
+
     </div>
 
     <ul class="site-menu">
+
         <li *ngFor="let link of site?.linksNavegacao">
+
             <a [href]="link.endereco">
                 {{ link.nome }}
             </a>
+
         </li>
+
     </ul>
 
-    <button
-        [style.background-color]="site?.botaoCabecalho?.cor"
-    >
+    <a [href]="site?.botaoCabecalho?.link"
+        [target]="site?.botaoCabecalho?.link?.startsWith('http') ? '_blank' : '_self'"
+        [rel]="site?.botaoCabecalho?.link?.startsWith('http') ? 'noopener noreferrer' : null"
+        [style.background-color]="site?.botaoCabecalho?.cor" class="botao-cabecalho">
         {{ site?.botaoCabecalho?.texto }} →
-    </button>
+    </a>
+
 </nav>
 
-<section
-    class="site-destaque"
-    *ngIf="site?.cardsCarrossel?.length"
->
+
+<section class="site-apresentacao" id="apresentacao">
+
+    <div class="apresentacao-conteudo">
+
+        <div class="apresentacao-texto">
+
+            <span>
+                {{ site?.apresentacao?.subtitulo }}
+            </span>
+
+            <h1 [style.color]="site?.corNome">
+                {{ site?.apresentacao?.titulo }}
+            </h1>
+
+        </div>
+
+        <div class="apresentacao-imagem" *ngIf="site?.apresentacao?.imagem">
+
+            <img [src]="site?.apresentacao?.imagem" alt="Imagem de apresentação">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="site-destaque" *ngIf="site?.cardsCarrossel?.length">
+
+    <button *ngIf="site.cardsCarrossel.length > 1" type="button" class="controle-carrossel anterior"
+        (click)="cardAnterior()">
+        ←
+    </button>
+
+
     <div class="destaque-conteudo">
+
         <span>
-            {{ site?.cardsCarrossel?.[0]?.subtitulo }}
+            {{ site.cardsCarrossel[cardAtual].subtitulo }}
         </span>
 
         <h2>
-            {{ site?.cardsCarrossel?.[0]?.titulo }}
+            {{ site.cardsCarrossel[cardAtual].titulo }}
         </h2>
 
         <p>
-            {{ site?.cardsCarrossel?.[0]?.descricao }}
+            {{ site.cardsCarrossel[cardAtual].descricao }}
         </p>
 
-        <a
-            [href]="site?.cardsCarrossel?.[0]?.linkBotao"
-            class="botao-destaque"
-            [style.background-color]="site?.cardsCarrossel?.[0]?.corBotao"
-        >
-            {{ site?.cardsCarrossel?.[0]?.textoBotao }} →
+        <a [href]="site.cardsCarrossel[cardAtual].linkBotao"
+            [target]="site.cardsCarrossel[cardAtual].linkBotao.startsWith('http') ? '_blank' : '_self'"
+            [rel]="site.cardsCarrossel[cardAtual].linkBotao.startsWith('http') ? 'noopener noreferrer' : null"
+            class="botao-destaque" [style.background-color]="site.cardsCarrossel[cardAtual].corBotao">
+            {{ site.cardsCarrossel[cardAtual].textoBotao }} →
         </a>
+
     </div>
+
 
     <div class="destaque-imagem">
-        <img
-            *ngIf="site?.cardsCarrossel?.[0]?.imagem"
-            [src]="site?.cardsCarrossel?.[0]?.imagem"
-            alt="Imagem de destaque"
-        >
+
+        <img *ngIf="site.cardsCarrossel[cardAtual].imagem" [src]="site.cardsCarrossel[cardAtual].imagem"
+            alt="Imagem de destaque">
+
     </div>
+
+
+    <button *ngIf="site.cardsCarrossel.length > 1" type="button" class="controle-carrossel proximo"
+        (click)="proximoCard()">
+        →
+    </button>
+
+
+    <div class="indicadores-carrossel" *ngIf="site.cardsCarrossel.length > 1">
+
+        <button *ngFor="let card of site.cardsCarrossel; let i = index" type="button" [class.ativo]="i === cardAtual"
+            (click)="selecionarCard(i)"></button>
+
+    </div>
+
 </section>
 
-<section class="site-momentos">
-    <div class="momentos-cabecalho">
-        <span>FEITO PARA A SUA MARCA</span>
-        <h2>Momentos que<br>contam histórias.</h2>
-    </div>
-
-    <div class="momentos-conteudo">
-        <article class="momento">
-            <div class="momento-numero">01</div>
-            <div>
-                <h3>Identidade</h3>
-                <p>
-                    Sua marca com uma identidade visual que representa
-                    quem você é.
-                </p>
-            </div>
-        </article>
-
-        <article class="momento">
-            <div class="momento-numero">02</div>
-            <div>
-                <h3>Qualidade</h3>
-                <p>
-                    Produtos pensados para entregar qualidade em cada
-                    detalhe.
-                </p>
-            </div>
-        </article>
-
-        <article class="momento">
-            <div class="momento-numero">03</div>
-            <div>
-                <h3>Personalização</h3>
-                <p>
-                    Soluções criadas de acordo com a necessidade
-                    da sua marca.
-                </p>
-            </div>
-        </article>
-
-        <article class="momento">
-            <div class="momento-numero">04</div>
-            <div>
-                <h3>Propósito</h3>
-                <p>
-                    Cada projeto transforma ideias em algo que
-                    pode ser vivido.
-                </p>
-            </div>
-        </article>
-    </div>
-</section>
 
 <section class="site-historia">
+
     <div class="historia-titulo">
+
         <span>
             {{ site?.historia?.subtitulo }}
         </span>
@@ -123,41 +126,55 @@
         <h2>
             {{ site?.historia?.titulo }}
         </h2>
+
     </div>
 
     <div class="historia-texto">
+
         <p>
             {{ site?.historia?.descricao }}
         </p>
+
     </div>
+
 </section>
 
+
 <section class="site-produtos">
+
     <div class="produtos-cabecalho">
+
         <div>
-            <span>ESCOLHAS QUE CONTAM</span>
-            <h2>Feito para você</h2>
+
+            <span>
+                ESCOLHAS QUE CONTAM
+            </span>
+
+            <h2>
+                Feito para você
+            </h2>
+
         </div>
 
         <p>
             {{ site?.produtos?.length }} produtos
         </p>
+
     </div>
 
+
     <div class="produtos-conteudo">
-        <article
-            class="produto"
-            *ngFor="let produto of site?.produtos"
-        >
+
+        <article class="produto" *ngFor="let produto of site?.produtos">
+
             <div class="produto-imagem">
-                <img
-                    *ngIf="produto.imagem"
-                    [src]="produto.imagem"
-                    [alt]="produto.titulo"
-                >
+
+                <img *ngIf="produto.imagem" [src]="produto.imagem" [alt]="produto.titulo">
+
             </div>
 
             <div class="produto-informacoes">
+
                 <h3>
                     {{ produto.titulo }}
                 </h3>
@@ -169,41 +186,53 @@
                 <strong>
                     {{ produto.preco }}
                 </strong>
+
             </div>
+
         </article>
+
     </div>
+
 </section>
 
-<footer class="site-footer">
+
+<footer class="site-footer" [style.background-color]="site?.rodape?.corFundo" [style.color]="site?.rodape?.corTexto">
+
     <div class="footer-conteudo">
+
         <div>
-            <span>
+
+            <span [style.color]="site?.rodape?.corTexto">
                 {{ site?.rodape?.subtitulo }}
             </span>
 
-            <h2>
-                Seu próximo projeto<br>
-                <strong>começa aqui.</strong>
+            <h2 [style.color]="site?.rodape?.corTexto">
+                {{ site?.rodape?.titulo }}
             </h2>
+
         </div>
 
         <div class="footer-contato">
-            <div
-                *ngFor="let link of site?.rodape?.links"
-                class="footer-link"
-            >
-                <span>
+
+            <div *ngFor="let link of site?.rodape?.links" class="footer-link">
+
+                <span [style.color]="site?.rodape?.corTexto">
                     {{ link.nome }}
                 </span>
 
-                <p>
+                <p [style.color]="site?.rodape?.corTexto">
                     {{ link.informacao }}
                 </p>
+
             </div>
+
         </div>
+
     </div>
 
+
     <div class="footer-final">
+
         <strong>
             {{ site?.nomeNegocio }}
         </strong>
@@ -212,9 +241,6 @@
             © {{ anoAtual }} {{ site?.nomeNegocio }}. Todos os direitos reservados.
         </span>
 
-        <div class="footer-redes">
-            <a href="#">In</a>
-            <a href="#">Wh</a>
-        </div>
     </div>
+
 </footer>

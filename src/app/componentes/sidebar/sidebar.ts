@@ -35,9 +35,10 @@ export class Sidebar {
     }
 
     logout() {
-        localStorage.removeItem('usuario');
-        localStorage.removeItem('perfil');
+    localStorage.removeItem('autenticado');
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('perfil');
 
-        this.router.navigate(['/login']);
-    }
+    this.router.navigate(['/login']);
+}
 }

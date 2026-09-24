@@ -6,14 +6,32 @@ import { SiteModel } from '../models/siteModel';
 })
 export class SiteService {
 
-    private chave = 'site';
-
     salvarSite(site: SiteModel) {
-        localStorage.setItem(this.chave, JSON.stringify(site));
+
+        const usuario = localStorage.getItem('usuario');
+
+        if (!usuario) {
+            return;
+        }
+
+        const dadosUsuario = JSON.parse(usuario);
+        const chave = 'site_' + dadosUsuario.email;
+
+        localStorage.setItem(chave, JSON.stringify(site));
     }
 
     buscarSite(): SiteModel | null {
-        const dados = localStorage.getItem(this.chave);
+
+        const usuario = localStorage.getItem('usuario');
+
+        if (!usuario) {
+            return null;
+        }
+
+        const dadosUsuario = JSON.parse(usuario);
+        const chave = 'site_' + dadosUsuario.email;
+
+        const dados = localStorage.getItem(chave);
 
         if (!dados) {
             return null;
