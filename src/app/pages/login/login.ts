@@ -13,6 +13,7 @@ export class Login {
 
     email = '';
     senha = '';
+    aceitouTermos = false;
 
     constructor(
         private loginService: LoginService,
@@ -20,13 +21,21 @@ export class Login {
     ) {}
 
     entrar() {
-        const loginValido = this.loginService.login(this.email, this.senha);
+
+        if (!this.aceitouTermos) {
+            alert('Você precisa aceitar os termos e condições.');
+            return;
+        }
+
+        const loginValido = this.loginService.login(
+            this.email,
+            this.senha
+        );
 
         if (loginValido) {
-            console.log('Login realizado com sucesso');
             this.router.navigate(['/site']);
         } else {
-            console.log('E-mail ou senha incorretos');
+            alert('E-mail ou senha incorretos.');
         }
     }
 }

@@ -10,17 +10,19 @@ import { Perfil } from './pages/perfil/perfil';
 import { Planos } from './pages/planos/planos';
 import { Pagamento } from './pages/pagamento/pagamento';
 import { PagamentoConfirmado } from './pages/pagamento-confirmado/pagamento-confirmado';
+import { authGuard } from './guards/auth-guard-guard';
+
 export const routes: Routes = [
     {path:"", redirectTo:"home", pathMatch:"full"},
     {path:"home", component:Home},
     {path:"login", component:Login},
     {path:"cadastro", component:Cadastro},
-    {path:"site", component:Site},
+    {path:"site", component:Site,  canActivate: [authGuard]},
     {path:"site/:url", component:SitePreview},
-    {path:"editarSite", component:EditarSite},
-    {path:"comunidade", component:Comunidade},
-    {path:"perfil", component:Perfil},
-    {path:"planos", component:Planos},
-    {path:"pagamento", component:Pagamento},
-    {path:"pagamentoConfirmado", component:PagamentoConfirmado}
+    {path:"editarSite", component:EditarSite, canActivate: [authGuard]},
+    {path:"comunidade", component:Comunidade, canActivate: [authGuard]},
+    {path:"perfil", component:Perfil, canActivate: [authGuard]},
+    {path:"planos", component:Planos, canActivate: [authGuard]},
+    {path:"pagamento", component:Pagamento, canActivate: [authGuard]},
+    {path:"pagamentoConfirmado", component:PagamentoConfirmado, canActivate: [authGuard]}
 ];

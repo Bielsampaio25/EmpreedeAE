@@ -50,13 +50,18 @@
                 </div>
 
                 <div class="opcao-termos">
-                    <input type="checkbox" id="termos" name="termos">
+    <input
+        type="checkbox"
+        id="termos"
+        name="termos"
+        [(ngModel)]="aceitouTermos"
+    >
 
-                    <label for="termos">
-                        Aceito os
-                        <a href="#">termos e condições</a>.
-                    </label>
-                </div>
+    <label for="termos">
+        Aceito os
+        <a href="#">termos e condições</a>.
+    </label>
+</div>
 
                 <a href="#" class="esqueci-senha">
                     Esqueci minha senha

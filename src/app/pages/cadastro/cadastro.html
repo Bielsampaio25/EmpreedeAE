@@ -26,66 +26,36 @@
             <div class="linha-formulario">
                 <div class="campo">
                     <label for="nome">Nome completo</label>
-                    <input
-                        type="text"
-                        id="nome"
-                        name="nome"
-                        [(ngModel)]="usuario.nome"
-                        placeholder="Seu nome"
-                    >
+                    <input type="text" id="nome" name="nome" [(ngModel)]="usuario.nome" placeholder="Seu nome">
                 </div>
 
                 <div class="campo">
                     <label for="negocio">Nome do negócio</label>
-                    <input
-                        type="text"
-                        id="negocio"
-                        name="negocio"
-                        placeholder="Como sua marca se chama?"
-                    >
+                    <input type="text" id="negocio" name="negocio" placeholder="Como sua marca se chama?">
                 </div>
             </div>
 
             <div class="campo">
                 <label for="email">E-mail</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    [(ngModel)]="usuario.email"
-                    placeholder="voce@seunegocio.com"
-                >
+                <input type="email" id="email" name="email" [(ngModel)]="usuario.email"
+                    placeholder="voce@seunegocio.com">
             </div>
 
             <div class="linha-formulario">
                 <div class="campo">
                     <label for="senha">Senha</label>
-                    <input
-                        type="password"
-                        id="senha"
-                        name="senha"
-                        [(ngModel)]="usuario.senha"
-                        placeholder="Mínimo 6 caracteres"
-                    >
+                    <input type="password" id="senha" name="senha" [(ngModel)]="usuario.senha"
+                        placeholder="Mínimo 6 caracteres">
                 </div>
 
                 <div class="campo">
                     <label for="confirmar-senha">Confirmar senha</label>
-                    <input
-                        type="password"
-                        id="confirmar-senha"
-                        name="confirmar-senha"
-                        placeholder="Repita sua senha"
-                    >
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Repita sua senha">
                 </div>
             </div>
 
             <div class="opcao">
-                <input
-                    type="checkbox"
-                    id="termos"
-                    name="termos"
-                >
+                <input type="checkbox" id="termos" name="termos" [(ngModel)]="aceitouTermos">
 
                 <label for="termos">
                     Li e aceito os
@@ -106,11 +76,7 @@
             </div>
 
             <div class="opcao opcao-novidades">
-                <input
-                    type="checkbox"
-                    id="novidades"
-                    name="novidades"
-                >
+                <input type="checkbox" id="novidades" name="novidades">
 
                 <label for="novidades">
                     Quero receber novidades e conteúdos do EmpreendeAÊ.
