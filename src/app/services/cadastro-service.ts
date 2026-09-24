@@ -9,4 +9,14 @@ export class CadastroService {
     cadastrar(usuario: UsuarioModel) {
         localStorage.setItem('usuario', JSON.stringify(usuario));
     }
+
+    buscarUsuario(): UsuarioModel | null {
+        const dados = localStorage.getItem('usuario');
+
+        if (!dados) {
+            return null;
+        }
+
+        return JSON.parse(dados);
+    }
 }

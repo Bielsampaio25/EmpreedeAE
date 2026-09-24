@@ -45,11 +45,13 @@
 
     <div class="perfil">
 
-        <div class="perfil-avatar">G</div>
+        <div class="perfil-avatar">
+            {{ usuario.nome ? usuario.nome.charAt(0).toUpperCase() : 'G' }}
+        </div>
 
         <div class="perfil-info">
-            <strong>gabriel</strong>
-            <span>sampaioedesign26@gmail...</span>
+            <strong>{{ usuario.nome || 'Usuário' }}</strong>
+            <span>{{ usuario.email || 'E-mail não informado' }}</span>
         </div>
 
         <span class="logout">↪</span>
