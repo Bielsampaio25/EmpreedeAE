@@ -27,7 +27,7 @@ export class Perfil {
 
     mensagem = '';
 
-    constructor(private cadastroService: CadastroService) {}
+    constructor(private cadastroService: CadastroService) { }
 
     ngOnInit() {
         const usuarioSalvo = this.cadastroService.buscarUsuario();
@@ -65,7 +65,7 @@ export class Perfil {
         this.mensagem = 'Alterações salvas com sucesso!';
 
         setTimeout(() => {
-            this.mensagem = '';
-        }, 3000);
+            window.location.reload();
+        }, 500);
     }
 }

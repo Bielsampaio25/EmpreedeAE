@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink, NavigationEnd } from '@angular/router';
 import { CadastroService } from '../../services/cadastro-service';
 import { UsuarioModel } from '../../models/usuario-model';
+import { filter } from 'rxjs';
 
 @Component({
     selector: 'app-sidebar',
@@ -24,6 +25,14 @@ export class Sidebar {
 
     ngOnInit() {
         this.atualizarPerfil();
+
+        this.router.events
+            .pipe(
+                filter(event => event instanceof NavigationEnd)
+            )
+            .subscribe(() => {
+                this.atualizarPerfil();
+            });
     }
 
     atualizarPerfil() {
@@ -35,10 +44,10 @@ export class Sidebar {
     }
 
     logout() {
-    localStorage.removeItem('autenticado');
-    localStorage.removeItem('usuario');
-    localStorage.removeItem('perfil');
+        localStorage.removeItem('autenticado');
+        localStorage.removeItem('usuario');
+        localStorage.removeItem('perfil');
 
-    this.router.navigate(['/login']);
-}
+        this.router.navigate(['/login']);
+    }
 }
