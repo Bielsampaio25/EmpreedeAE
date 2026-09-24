@@ -16,7 +16,7 @@ export const routes: Routes = [
     {path:"login", component:Login},
     {path:"cadastro", component:Cadastro},
     {path:"site", component:Site},
-    {path:"sitePreview", component:SitePreview},
+    {path:"site/:url", component:SitePreview},
     {path:"editarSite", component:EditarSite},
     {path:"comunidade", component:Comunidade},
     {path:"perfil", component:Perfil},

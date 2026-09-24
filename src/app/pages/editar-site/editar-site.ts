@@ -14,6 +14,7 @@ import { SiteService } from '../../services/site-service';
 export class EditarSite {
 
     anoAtual = new Date().getFullYear();
+    enderecoBase = window.location.origin;
 
     site: SiteModel = {
         nomeNegocio: 'Gabriel Camisetas',

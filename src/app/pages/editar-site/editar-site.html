@@ -9,18 +9,11 @@
         </div>
 
         <div class="acoes-pagina">
-            <button
-                type="button"
-                class="botao-secundario"
-            >
+            <button type="button" class="botao-secundario">
                 Visualizar site
             </button>
 
-            <button
-                type="button"
-                class="botao-principal"
-                (click)="salvarAlteracoes()"
-            >
+            <button type="button" class="botao-principal" (click)="salvarAlteracoes()">
                 Salvar alterações
             </button>
         </div>
@@ -30,7 +23,9 @@
         <div class="url-site-cabecalho">
             <div>
                 <span class="subtitulo-pagina">ENDEREÇO DO SITE</span>
+
                 <h2>Seu site está disponível em</h2>
+
                 <p>
                     Compartilhe esse endereço para que outras pessoas possam acessar seu site.
                 </p>
@@ -39,20 +34,11 @@
 
         <div class="url-site-conteudo">
             <div class="url-site-campo">
-                <span>http://site/</span>
+                <span>{{ enderecoBase }}/site/</span>
 
-                <input
-                    type="text"
-                    [value]="site.url"
-                    readonly
-                >
+                <input type="text" [value]="site.url" readonly>
             </div>
-
-            <button
-                type="button"
-                class="botao-copiar"
-                (click)="copiarUrl()"
-            >
+            <button type="button" class="botao-copiar" (click)="copiarUrl()">
                 Copiar URL
             </button>
         </div>
@@ -77,11 +63,7 @@
 
                         <div class="upload-imagem">
                             <div class="preview-logo">
-                                <img
-                                    *ngIf="site.logo"
-                                    [src]="site.logo"
-                                    alt="Logo do empreendimento"
-                                >
+                                <img *ngIf="site.logo" [src]="site.logo" alt="Logo do empreendimento">
                             </div>
 
                             <div class="upload-conteudo">
@@ -91,10 +73,7 @@
                                 <label class="botao-upload">
                                     Escolher imagem
 
-                                    <input
-                                        type="file"
-                                        accept="image/png,image/jpeg,image/svg+xml"
-                                    >
+                                    <input type="file" accept="image/png,image/jpeg,image/svg+xml">
                                 </label>
                             </div>
                         </div>
@@ -104,19 +83,10 @@
                         <label for="nome-negocio">Nome do empreendimento</label>
 
                         <div class="campo-com-cor">
-                            <input
-                                type="text"
-                                id="nome-negocio"
-                                [(ngModel)]="site.nomeNegocio"
-                                (ngModelChange)="gerarUrl()"
-                                placeholder="Ex.: Gabriel Camisetas"
-                            >
+                            <input type="text" id="nome-negocio" [(ngModel)]="site.nomeNegocio"
+                                (ngModelChange)="gerarUrl()" placeholder="Ex.: Gabriel Camisetas">
 
-                            <input
-                                type="color"
-                                [(ngModel)]="site.corNome"
-                                title="Escolher cor do nome"
-                            >
+                            <input type="color" [(ngModel)]="site.corNome" title="Escolher cor do nome">
                         </div>
                     </div>
                 </div>
@@ -128,45 +98,26 @@
                             <p>Adicione os links que aparecerão no menu do seu site.</p>
                         </div>
 
-                        <button
-                            type="button"
-                            class="botao-adicionar"
-                            (click)="adicionarLinkNavegacao()"
-                        >
+                        <button type="button" class="botao-adicionar" (click)="adicionarLinkNavegacao()">
                             + Adicionar link
                         </button>
                     </div>
 
                     <div class="lista-links">
-                        <div
-                            class="linha-link"
-                            *ngFor="let link of site.linksNavegacao; let i = index"
-                        >
+                        <div class="linha-link" *ngFor="let link of site.linksNavegacao; let i = index">
                             <div class="campo-formulario">
                                 <label>Nome do link</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="link.nome"
-                                    placeholder="Ex.: Sobre"
-                                >
+                                <input type="text" [(ngModel)]="link.nome" placeholder="Ex.: Sobre">
                             </div>
 
                             <div class="campo-formulario">
                                 <label>Endereço do link</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="link.endereco"
-                                    placeholder="Ex.: #sobre"
-                                >
+                                <input type="text" [(ngModel)]="link.endereco" placeholder="Ex.: #sobre">
                             </div>
 
-                            <button
-                                type="button"
-                                class="botao-remover"
-                                (click)="removerLinkNavegacao(i)"
-                            >
+                            <button type="button" class="botao-remover" (click)="removerLinkNavegacao(i)">
                                 Remover
                             </button>
                         </div>
@@ -185,21 +136,15 @@
                         <div class="campo-formulario">
                             <label>Texto do botão</label>
 
-                            <input
-                                type="text"
-                                [(ngModel)]="site.botaoCabecalho.texto"
-                                placeholder="Ex.: Falar com a marca"
-                            >
+                            <input type="text" [(ngModel)]="site.botaoCabecalho.texto"
+                                placeholder="Ex.: Falar com a marca">
                         </div>
 
                         <div class="campo-formulario campo-cor">
                             <label>Cor do botão</label>
 
                             <div class="seletor-cor">
-                                <input
-                                    type="color"
-                                    [(ngModel)]="site.botaoCabecalho.cor"
-                                >
+                                <input type="color" [(ngModel)]="site.botaoCabecalho.cor">
 
                                 <span>
                                     {{ site.botaoCabecalho.cor }}
@@ -223,30 +168,21 @@
                     <div class="campo-formulario">
                         <label>Subtítulo</label>
 
-                        <input
-                            type="text"
-                            [(ngModel)]="site.historia.subtitulo"
-                            placeholder="Ex.: Nossa história"
-                        >
+                        <input type="text" [(ngModel)]="site.historia.subtitulo" placeholder="Ex.: Nossa história">
                     </div>
 
                     <div class="campo-formulario">
                         <label>Título</label>
 
-                        <input
-                            type="text"
-                            [(ngModel)]="site.historia.titulo"
-                            placeholder="Ex.: Feito para vestir o que importa"
-                        >
+                        <input type="text" [(ngModel)]="site.historia.titulo"
+                            placeholder="Ex.: Feito para vestir o que importa">
                     </div>
 
                     <div class="campo-formulario">
                         <label>Texto descritivo</label>
 
-                        <textarea
-                            [(ngModel)]="site.historia.descricao"
-                            placeholder="Conte um pouco sobre a história do seu empreendimento..."
-                        ></textarea>
+                        <textarea [(ngModel)]="site.historia.descricao"
+                            placeholder="Conte um pouco sobre a história do seu empreendimento..."></textarea>
                     </div>
                 </div>
             </section>
@@ -259,20 +195,13 @@
                         <p>Apresente seus produtos, serviços ou principais ofertas.</p>
                     </div>
 
-                    <button
-                        type="button"
-                        class="botao-adicionar"
-                        (click)="adicionarProduto()"
-                    >
+                    <button type="button" class="botao-adicionar" (click)="adicionarProduto()">
                         + Adicionar produto
                     </button>
                 </div>
 
                 <div class="lista-produtos">
-                    <article
-                        class="card-produto-editor"
-                        *ngFor="let produto of site.produtos; let i = index"
-                    >
+                    <article class="card-produto-editor" *ngFor="let produto of site.produtos; let i = index">
                         <div class="cabecalho-card">
                             <div>
                                 <span>
@@ -284,31 +213,20 @@
                                 </h3>
                             </div>
 
-                            <button
-                                type="button"
-                                class="botao-remover"
-                                (click)="removerProduto(i)"
-                            >
+                            <button type="button" class="botao-remover" (click)="removerProduto(i)">
                                 Remover
                             </button>
                         </div>
 
                         <div class="upload-produto">
                             <div class="espaco-imagem-produto">
-                                <img
-                                    *ngIf="produto.imagem"
-                                    [src]="produto.imagem"
-                                    [alt]="produto.titulo"
-                                >
+                                <img *ngIf="produto.imagem" [src]="produto.imagem" [alt]="produto.titulo">
                             </div>
 
                             <label class="botao-upload">
                                 Escolher imagem
 
-                                <input
-                                    type="file"
-                                    accept="image/png,image/jpeg,image/webp"
-                                >
+                                <input type="file" accept="image/png,image/jpeg,image/webp">
                             </label>
                         </div>
 
@@ -316,30 +234,20 @@
                             <div class="campo-formulario">
                                 <label>Título do produto</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="produto.titulo"
-                                    placeholder="Ex.: Camiseta Manifesto"
-                                >
+                                <input type="text" [(ngModel)]="produto.titulo" placeholder="Ex.: Camiseta Manifesto">
                             </div>
 
                             <div class="campo-formulario">
                                 <label>Descrição</label>
 
-                                <textarea
-                                    [(ngModel)]="produto.descricao"
-                                    placeholder="Descreva seu produto..."
-                                ></textarea>
+                                <textarea [(ngModel)]="produto.descricao"
+                                    placeholder="Descreva seu produto..."></textarea>
                             </div>
 
                             <div class="campo-formulario">
                                 <label>Preço</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="produto.preco"
-                                    placeholder="Ex.: R$ 89,90"
-                                >
+                                <input type="text" [(ngModel)]="produto.preco" placeholder="Ex.: R$ 89,90">
                             </div>
                         </div>
                     </article>
@@ -354,20 +262,13 @@
                         <p>Crie cards para destacar produtos, campanhas ou novidades.</p>
                     </div>
 
-                    <button
-                        type="button"
-                        class="botao-adicionar"
-                        (click)="adicionarCardCarrossel()"
-                    >
+                    <button type="button" class="botao-adicionar" (click)="adicionarCardCarrossel()">
                         + Adicionar card
                     </button>
                 </div>
 
                 <div class="lista-carrossel">
-                    <article
-                        class="card-carrossel-editor"
-                        *ngFor="let card of site.cardsCarrossel; let i = index"
-                    >
+                    <article class="card-carrossel-editor" *ngFor="let card of site.cardsCarrossel; let i = index">
                         <div class="cabecalho-card">
                             <div>
                                 <span>
@@ -379,31 +280,20 @@
                                 </h3>
                             </div>
 
-                            <button
-                                type="button"
-                                class="botao-remover"
-                                (click)="removerCardCarrossel(i)"
-                            >
+                            <button type="button" class="botao-remover" (click)="removerCardCarrossel(i)">
                                 Remover
                             </button>
                         </div>
 
                         <div class="upload-carrossel">
                             <div class="espaco-imagem-carrossel">
-                                <img
-                                    *ngIf="card.imagem"
-                                    [src]="card.imagem"
-                                    alt="Imagem do carrossel"
-                                >
+                                <img *ngIf="card.imagem" [src]="card.imagem" alt="Imagem do carrossel">
                             </div>
 
                             <label class="botao-upload">
                                 Escolher imagem
 
-                                <input
-                                    type="file"
-                                    accept="image/png,image/jpeg,image/webp"
-                                >
+                                <input type="file" accept="image/png,image/jpeg,image/webp">
                             </label>
                         </div>
 
@@ -411,30 +301,21 @@
                             <div class="campo-formulario">
                                 <label>Subtítulo</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="card.subtitulo"
-                                    placeholder="Ex.: Destaque do negócio"
-                                >
+                                <input type="text" [(ngModel)]="card.subtitulo" placeholder="Ex.: Destaque do negócio">
                             </div>
 
                             <div class="campo-formulario">
                                 <label>Título</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="card.titulo"
-                                    placeholder="Ex.: Ideias que viram identidade"
-                                >
+                                <input type="text" [(ngModel)]="card.titulo"
+                                    placeholder="Ex.: Ideias que viram identidade">
                             </div>
 
                             <div class="campo-formulario">
                                 <label>Descrição</label>
 
-                                <textarea
-                                    [(ngModel)]="card.descricao"
-                                    placeholder="Escreva uma descrição para este destaque..."
-                                ></textarea>
+                                <textarea [(ngModel)]="card.descricao"
+                                    placeholder="Escreva uma descrição para este destaque..."></textarea>
                             </div>
                         </div>
 
@@ -450,31 +331,20 @@
                                 <div class="campo-formulario">
                                     <label>Texto do botão</label>
 
-                                    <input
-                                        type="text"
-                                        [(ngModel)]="card.textoBotao"
-                                        placeholder="Ex.: Conheça agora"
-                                    >
+                                    <input type="text" [(ngModel)]="card.textoBotao" placeholder="Ex.: Conheça agora">
                                 </div>
 
                                 <div class="campo-formulario">
                                     <label>Link de redirecionamento</label>
 
-                                    <input
-                                        type="text"
-                                        [(ngModel)]="card.linkBotao"
-                                        placeholder="https://..."
-                                    >
+                                    <input type="text" [(ngModel)]="card.linkBotao" placeholder="https://...">
                                 </div>
 
                                 <div class="campo-formulario campo-cor">
                                     <label>Cor</label>
 
                                     <div class="seletor-cor">
-                                        <input
-                                            type="color"
-                                            [(ngModel)]="card.corBotao"
-                                        >
+                                        <input type="color" [(ngModel)]="card.corBotao">
 
                                         <span>
                                             {{ card.corBotao }}
@@ -509,10 +379,7 @@
                             sua marca de uma maneira mais envolvente.
                         </p>
 
-                        <button
-                            type="button"
-                            class="botao-principal"
-                        >
+                        <button type="button" class="botao-principal">
                             Conhecer planos
                         </button>
                     </div>
@@ -527,10 +394,7 @@
                             <label class="botao-upload">
                                 Escolher vídeo
 
-                                <input
-                                    type="file"
-                                    accept="video/mp4,video/webm"
-                                >
+                                <input type="file" accept="video/mp4,video/webm">
                             </label>
                         </div>
                     </div>
@@ -550,11 +414,7 @@
                     <div class="campo-formulario">
                         <label>Subtítulo</label>
 
-                        <input
-                            type="text"
-                            [(ngModel)]="site.rodape.subtitulo"
-                            placeholder="Ex.: Vamos conversar?"
-                        >
+                        <input type="text" [(ngModel)]="site.rodape.subtitulo" placeholder="Ex.: Vamos conversar?">
                     </div>
                 </div>
 
@@ -565,45 +425,26 @@
                             <p>Adicione contatos, redes sociais e outras informações.</p>
                         </div>
 
-                        <button
-                            type="button"
-                            class="botao-adicionar"
-                            (click)="adicionarLinkRodape()"
-                        >
+                        <button type="button" class="botao-adicionar" (click)="adicionarLinkRodape()">
                             + Adicionar link
                         </button>
                     </div>
 
                     <div class="lista-links">
-                        <div
-                            class="linha-link"
-                            *ngFor="let link of site.rodape.links; let i = index"
-                        >
+                        <div class="linha-link" *ngFor="let link of site.rodape.links; let i = index">
                             <div class="campo-formulario">
                                 <label>Nome</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="link.nome"
-                                    placeholder="Ex.: E-mail"
-                                >
+                                <input type="text" [(ngModel)]="link.nome" placeholder="Ex.: E-mail">
                             </div>
 
                             <div class="campo-formulario">
                                 <label>Informação ou link</label>
 
-                                <input
-                                    type="text"
-                                    [(ngModel)]="link.informacao"
-                                    placeholder="Ex.: contato@empresa.com"
-                                >
+                                <input type="text" [(ngModel)]="link.informacao" placeholder="Ex.: contato@empresa.com">
                             </div>
 
-                            <button
-                                type="button"
-                                class="botao-remover"
-                                (click)="removerLinkRodape(i)"
-                            >
+                            <button type="button" class="botao-remover" (click)="removerLinkRodape(i)">
                                 Remover
                             </button>
                         </div>
@@ -621,11 +462,9 @@
                     <div class="campo-formulario">
                         <label>Copyright gerado automaticamente</label>
 
-                        <input
-                            type="text"
+                        <input type="text"
                             [value]="'© ' + anoAtual + ' ' + site.nomeNegocio + '. Todos os direitos reservados.'"
-                            readonly
-                        >
+                            readonly>
                     </div>
                 </div>
             </section>

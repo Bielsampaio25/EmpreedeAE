@@ -11,9 +11,10 @@
     </section>
 
     <section class="site">
-        <iframe
-            src="/sitePreview"
-            title="Preview do site">
-        </iframe>
-    </section>
+    <iframe
+        *ngIf="urlPreview"
+        [src]="urlPreview"
+        title="Preview do site">
+    </iframe>
+</section>
 </main>
