@@ -10,7 +10,14 @@
 
         <div class="acoes-pagina">
             <button type="button" class="botao-secundario">Visualizar site</button>
-            <button type="button" class="botao-principal">Salvar alterações</button>
+
+            <button
+                type="button"
+                class="botao-principal"
+                (click)="salvarAlteracoes()"
+            >
+                Salvar alterações
+            </button>
         </div>
     </section>
 
@@ -33,7 +40,10 @@
 
                         <div class="upload-imagem">
                             <div class="preview-logo">
-                                <img src="" alt="Logo do empreendimento">
+                                <img
+                                    [src]="site.logo"
+                                    alt="Logo do empreendimento"
+                                >
                             </div>
 
                             <div class="upload-conteudo">
@@ -42,7 +52,11 @@
 
                                 <label class="botao-upload">
                                     Escolher imagem
-                                    <input type="file" accept="image/png,image/jpeg,image/svg+xml">
+
+                                    <input
+                                        type="file"
+                                        accept="image/png,image/jpeg,image/svg+xml"
+                                    >
                                 </label>
                             </div>
                         </div>
@@ -55,12 +69,13 @@
                             <input
                                 type="text"
                                 id="nome-negocio"
+                                [(ngModel)]="site.nomeNegocio"
                                 placeholder="Ex.: Gabriel Camisetas"
                             >
 
                             <input
                                 type="color"
-                                value="#17213D"
+                                [(ngModel)]="site.corNome"
                                 title="Escolher cor do nome"
                             >
                         </div>
@@ -86,7 +101,7 @@
                     <div class="lista-links">
                         <div
                             class="linha-link"
-                            *ngFor="let link of linksNavegacao; let i = index"
+                            *ngFor="let link of site.linksNavegacao; let i = index"
                         >
                             <div class="campo-formulario">
                                 <label>Nome do link</label>
@@ -133,6 +148,7 @@
 
                             <input
                                 type="text"
+                                [(ngModel)]="site.botaoCabecalho.texto"
                                 placeholder="Ex.: Falar com a marca"
                             >
                         </div>
@@ -141,8 +157,14 @@
                             <label>Cor do botão</label>
 
                             <div class="seletor-cor">
-                                <input type="color" value="#2563EB">
-                                <span>#2563EB</span>
+                                <input
+                                    type="color"
+                                    [(ngModel)]="site.botaoCabecalho.cor"
+                                >
+
+                                <span>
+                                    {{ site.botaoCabecalho.cor }}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -164,6 +186,7 @@
 
                         <input
                             type="text"
+                            [(ngModel)]="site.historia.subtitulo"
                             placeholder="Ex.: Nossa história"
                         >
                     </div>
@@ -173,6 +196,7 @@
 
                         <input
                             type="text"
+                            [(ngModel)]="site.historia.titulo"
                             placeholder="Ex.: Feito para vestir o que importa"
                         >
                     </div>
@@ -181,6 +205,7 @@
                         <label>Texto descritivo</label>
 
                         <textarea
+                            [(ngModel)]="site.historia.descricao"
                             placeholder="Conte um pouco sobre a história do seu empreendimento..."
                         ></textarea>
                     </div>
@@ -204,30 +229,10 @@
                     </button>
                 </div>
 
-                <div class="grupo-formulario">
-                    <div class="campo-formulario">
-                        <label>Subtítulo da seção</label>
-
-                        <input
-                            type="text"
-                            placeholder="Ex.: Escolhas que contam"
-                        >
-                    </div>
-
-                    <div class="campo-formulario">
-                        <label>Título da seção</label>
-
-                        <input
-                            type="text"
-                            placeholder="Ex.: Feito para você"
-                        >
-                    </div>
-                </div>
-
                 <div class="lista-produtos">
                     <article
                         class="card-produto-editor"
-                        *ngFor="let produto of produtos; let i = index"
+                        *ngFor="let produto of site.produtos; let i = index"
                     >
                         <div class="cabecalho-card">
                             <div>
@@ -235,7 +240,9 @@
                                     PRODUTO {{ (i + 1).toString().padStart(2, '0') }}
                                 </span>
 
-                                <h3>Novo produto</h3>
+                                <h3>
+                                    {{ produto.titulo || 'Novo produto' }}
+                                </h3>
                             </div>
 
                             <button
@@ -250,8 +257,9 @@
                         <div class="upload-produto">
                             <div class="espaco-imagem-produto">
                                 <img
+                                    *ngIf="produto.imagem"
                                     [src]="produto.imagem"
-                                    alt="Imagem do produto"
+                                    [alt]="produto.titulo"
                                 >
                             </div>
 
@@ -319,7 +327,7 @@
                 <div class="lista-carrossel">
                     <article
                         class="card-carrossel-editor"
-                        *ngFor="let card of cardsCarrossel; let i = index"
+                        *ngFor="let card of site.cardsCarrossel; let i = index"
                     >
                         <div class="cabecalho-card">
                             <div>
@@ -327,7 +335,9 @@
                                     CARD {{ (i + 1).toString().padStart(2, '0') }}
                                 </span>
 
-                                <h3>Destaque do carrossel</h3>
+                                <h3>
+                                    {{ card.titulo || 'Destaque do carrossel' }}
+                                </h3>
                             </div>
 
                             <button
@@ -342,6 +352,7 @@
                         <div class="upload-carrossel">
                             <div class="espaco-imagem-carrossel">
                                 <img
+                                    *ngIf="card.imagem"
                                     [src]="card.imagem"
                                     alt="Imagem do carrossel"
                                 >
@@ -426,7 +437,9 @@
                                             [(ngModel)]="card.corBotao"
                                         >
 
-                                        <span>{{ card.corBotao }}</span>
+                                        <span>
+                                            {{ card.corBotao }}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -500,6 +513,7 @@
 
                         <input
                             type="text"
+                            [(ngModel)]="site.rodape.subtitulo"
                             placeholder="Ex.: Vamos conversar?"
                         >
                     </div>
@@ -524,7 +538,7 @@
                     <div class="lista-links">
                         <div
                             class="linha-link"
-                            *ngFor="let link of linksRodape; let i = index"
+                            *ngFor="let link of site.rodape.links; let i = index"
                         >
                             <div class="campo-formulario">
                                 <label>Nome</label>
@@ -570,7 +584,7 @@
 
                         <input
                             type="text"
-                            [value]="'© ' + anoAtual + ' Gabriel Camisetas. Todos os direitos reservados.'"
+                            [value]="'© ' + anoAtual + ' ' + site.nomeNegocio + '. Todos os direitos reservados.'"
                             readonly
                         >
                     </div>

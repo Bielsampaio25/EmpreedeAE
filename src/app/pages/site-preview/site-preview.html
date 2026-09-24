@@ -1,152 +1,220 @@
 <nav class="site-nav">
-            <div class="site-nav-titulo">
-                <img src="" alt="Imagem do negócio">
-                <h1>Gabriel Camisetas</h1>
-            </div>
+    <div class="site-nav-titulo">
+        <img
+            *ngIf="site?.logo"
+            [src]="site?.logo"
+            alt="Logo do negócio"
+        >
 
-            <ul class="site-menu">
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
+        <h1 [style.color]="site?.corNome">
+            {{ site?.nomeNegocio }}
+        </h1>
+    </div>
 
-            <button>Falar com a marca →</button>
-        </nav>
+    <ul class="site-menu">
+        <li *ngFor="let link of site?.linksNavegacao">
+            <a [href]="link.endereco">
+                {{ link.nome }}
+            </a>
+        </li>
+    </ul>
 
-        <section class="site-destaque">
-            <div class="destaque-conteudo">
-                <span>PERSONALIZANDO IDEIAS, CRIANDO IDENTIDADE.</span>
-                <h2>Vista a sua ideia.</h2>
+    <button
+        [style.background-color]="site?.botaoCabecalho?.cor"
+    >
+        {{ site?.botaoCabecalho?.texto }} →
+    </button>
+</nav>
+
+<section
+    class="site-destaque"
+    *ngIf="site?.cardsCarrossel?.length"
+>
+    <div class="destaque-conteudo">
+        <span>
+            {{ site?.cardsCarrossel?.[0]?.subtitulo }}
+        </span>
+
+        <h2>
+            {{ site?.cardsCarrossel?.[0]?.titulo }}
+        </h2>
+
+        <p>
+            {{ site?.cardsCarrossel?.[0]?.descricao }}
+        </p>
+
+        <a
+            [href]="site?.cardsCarrossel?.[0]?.linkBotao"
+            class="botao-destaque"
+            [style.background-color]="site?.cardsCarrossel?.[0]?.corBotao"
+        >
+            {{ site?.cardsCarrossel?.[0]?.textoBotao }} →
+        </a>
+    </div>
+
+    <div class="destaque-imagem">
+        <img
+            *ngIf="site?.cardsCarrossel?.[0]?.imagem"
+            [src]="site?.cardsCarrossel?.[0]?.imagem"
+            alt="Imagem de destaque"
+        >
+    </div>
+</section>
+
+<section class="site-momentos">
+    <div class="momentos-cabecalho">
+        <span>FEITO PARA A SUA MARCA</span>
+        <h2>Momentos que<br>contam histórias.</h2>
+    </div>
+
+    <div class="momentos-conteudo">
+        <article class="momento">
+            <div class="momento-numero">01</div>
+            <div>
+                <h3>Identidade</h3>
                 <p>
-                    Camisetas autorais e personalizadas para transformar
-                    histórias em identidade.
-                </p>
-                <button>Conheça nossos produtos →</button>
-            </div>
-
-            <div class="destaque-imagem">
-            </div>
-        </section>
-
-        <section class="site-momentos">
-            <div class="momentos-cabecalho">
-                <div>
-                    <span>MOMENTOS DA MARCA</span>
-                    <h2>Feito de perto.</h2>
-                </div>
-
-                <p>4 registros</p>
-            </div>
-
-            <div class="momentos-conteudo">
-                <div class="momento momento-detalhe">
-                    <div>
-                        <h3>DETALHE</h3>
-                        <p>A nossa bancada de criação.</p>
-                    </div>
-                </div>
-
-                <div class="momento momento-movimento">
-                    <div>
-                        <h3>MOVIMENTO</h3>
-                        <p>Feito para vestir ideias.</p>
-                    </div>
-                </div>
-
-                <div class="momento momento-processo">
-                    <div>
-                        <h3>PROCESSO</h3>
-                        <p>Processo autoral.</p>
-                    </div>
-                </div>
-
-                <div class="momento momento-envio">
-                    <div>
-                        <h3>ENVIO</h3>
-                        <p>Tudo chega com intenção.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="site-historia">
-            <div class="historia-titulo">
-                <span>NOSSA HISTÓRIA</span>
-                <h2>Feito para vestir o que importa</h2>
-            </div>
-
-            <div class="historia-texto">
-                <p>
-                    A Gabriel Camisetas nasceu para dar forma às ideias de quem
-                    cria, empreende e faz acontecer. Cada peça é pensada com
-                    cuidado, da arte ao acabamento.
+                    Sua marca com uma identidade visual que representa
+                    quem você é.
                 </p>
             </div>
-        </section>
+        </article>
 
-        <section class="site-produtos">
-            <div class="produtos-cabecalho">
-                <div>
-                    <span>ESCOLHAS QUE CONTAM</span>
-                    <h2>Feito para você</h2>
-                </div>
+        <article class="momento">
+            <div class="momento-numero">02</div>
+            <div>
+                <h3>Qualidade</h3>
+                <p>
+                    Produtos pensados para entregar qualidade em cada
+                    detalhe.
+                </p>
+            </div>
+        </article>
 
-                <p>3 produtos</p>
+        <article class="momento">
+            <div class="momento-numero">03</div>
+            <div>
+                <h3>Personalização</h3>
+                <p>
+                    Soluções criadas de acordo com a necessidade
+                    da sua marca.
+                </p>
+            </div>
+        </article>
+
+        <article class="momento">
+            <div class="momento-numero">04</div>
+            <div>
+                <h3>Propósito</h3>
+                <p>
+                    Cada projeto transforma ideias em algo que
+                    pode ser vivido.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="site-historia">
+    <div class="historia-titulo">
+        <span>
+            {{ site?.historia?.subtitulo }}
+        </span>
+
+        <h2>
+            {{ site?.historia?.titulo }}
+        </h2>
+    </div>
+
+    <div class="historia-texto">
+        <p>
+            {{ site?.historia?.descricao }}
+        </p>
+    </div>
+</section>
+
+<section class="site-produtos">
+    <div class="produtos-cabecalho">
+        <div>
+            <span>ESCOLHAS QUE CONTAM</span>
+            <h2>Feito para você</h2>
+        </div>
+
+        <p>
+            {{ site?.produtos?.length }} produtos
+        </p>
+    </div>
+
+    <div class="produtos-conteudo">
+        <article
+            class="produto"
+            *ngFor="let produto of site?.produtos"
+        >
+            <div class="produto-imagem">
+                <img
+                    *ngIf="produto.imagem"
+                    [src]="produto.imagem"
+                    [alt]="produto.titulo"
+                >
             </div>
 
-            <div class="produtos-conteudo">
-                <article class="produto">
-                    <div class="produto-imagem"></div>
+            <div class="produto-informacoes">
+                <h3>
+                    {{ produto.titulo }}
+                </h3>
 
-                    <div class="produto-informacoes">
-                        <h3>Camiseta Manifesto</h3>
-                        <span>Coleção autoral</span>
-                        <strong>R$ 89,90</strong>
-                    </div>
-                </article>
+                <span>
+                    {{ produto.descricao }}
+                </span>
 
-                <article class="produto">
-                    <div class="produto-imagem"></div>
-
-                    <div class="produto-informacoes">
-                        <h3>Kit Marca em Movimento</h3>
-                        <span>Kits</span>
-                        <strong>R$ 149,90</strong>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem"></div>
-
-                    <div class="produto-informacoes">
-                        <h3>Personalizada para você</h3>
-                        <span>Personalização</span>
-                        <strong>A partir de R$ 119,90</strong>
-                    </div>
-                </article>
+                <strong>
+                    {{ produto.preco }}
+                </strong>
             </div>
-        </section>
+        </article>
+    </div>
+</section>
 
-        <footer class="site-footer">
-            <div class="footer-conteudo">
-                <div>
-                    <span>VAMOS CONVERSAR?</span>
-                    <h2>Seu próximo projeto<br><strong>começa aqui.</strong></h2>
-                </div>
+<footer class="site-footer">
+    <div class="footer-conteudo">
+        <div>
+            <span>
+                {{ site?.rodape?.subtitulo }}
+            </span>
 
-                <div class="footer-contato">
-                    <p>oi@gabrielcamisetas.com</p>
-                    <p>(11) 99876-2210</p>
-                    <p>São Paulo, SP</p>
-                </div>
+            <h2>
+                Seu próximo projeto<br>
+                <strong>começa aqui.</strong>
+            </h2>
+        </div>
+
+        <div class="footer-contato">
+            <div
+                *ngFor="let link of site?.rodape?.links"
+                class="footer-link"
+            >
+                <span>
+                    {{ link.nome }}
+                </span>
+
+                <p>
+                    {{ link.informacao }}
+                </p>
             </div>
+        </div>
+    </div>
 
-            <div class="footer-final">
-                <strong>Gabriel Camisetas</strong>
-                <span>Feito com intenção · EmpreendeAÊ</span>
-                <div class="footer-redes">
-                    <a href="#">In</a>
-                    <a href="#">Wh</a>
-                </div>
-            </div>
-        </footer>
+    <div class="footer-final">
+        <strong>
+            {{ site?.nomeNegocio }}
+        </strong>
+
+        <span>
+            © {{ anoAtual }} {{ site?.nomeNegocio }}. Todos os direitos reservados.
+        </span>
+
+        <div class="footer-redes">
+            <a href="#">In</a>
+            <a href="#">Wh</a>
+        </div>
+    </div>
+</footer>

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Sidebar } from '../../componentes/sidebar/sidebar';
-
+import { SiteModel } from '../../models/siteModel';
+import { SiteService } from '../../services/site-service';
 
 @Component({
     selector: 'app-editar-site',
@@ -14,50 +15,117 @@ export class EditarSite {
 
     anoAtual = new Date().getFullYear();
 
-    linksNavegacao = [
-        { nome: '', endereco: '' },
-        { nome: '', endereco: '' }
-    ];
+    site: SiteModel = {
+        nomeNegocio: 'Gabriel Camisetas',
+        corNome: '#17213D',
+        logo: '',
 
-    produtos = [
-        {
-            titulo: '',
-            descricao: '',
-            preco: '',
-            imagem: ''
+        linksNavegacao: [
+            {
+                nome: 'Sobre',
+                endereco: '#sobre'
+            },
+            {
+                nome: 'Produtos',
+                endereco: '#produtos'
+            },
+            {
+                nome: 'Contato',
+                endereco: '#contato'
+            }
+        ],
+
+        botaoCabecalho: {
+            texto: 'Falar com a marca',
+            cor: '#2563EB'
+        },
+
+        historia: {
+            subtitulo: 'NOSSA HISTÓRIA',
+            titulo: 'Feito para vestir o que importa',
+            descricao: 'A Gabriel Camisetas nasceu para dar forma às ideias de quem cria, empreende e faz acontecer. Cada peça é pensada com cuidado, da arte ao acabamento.'
+        },
+
+        produtos: [
+            {
+                titulo: 'Camiseta Manifesto',
+                descricao: 'Coleção autoral',
+                preco: 'R$ 89,90',
+                imagem: ''
+            },
+            {
+                titulo: 'Kit Marca em Movimento',
+                descricao: 'Kits',
+                preco: 'R$ 149,90',
+                imagem: ''
+            },
+            {
+                titulo: 'Personalizada para você',
+                descricao: 'Personalização',
+                preco: 'A partir de R$ 119,90',
+                imagem: ''
+            }
+        ],
+
+        cardsCarrossel: [
+            {
+                subtitulo: 'PERSONALIZANDO IDEIAS, CRIANDO IDENTIDADE.',
+                titulo: 'Vista a sua ideia.',
+                descricao: 'Camisetas autorais e personalizadas para transformar histórias em identidade.',
+                imagem: '',
+                textoBotao: 'Conheça nossos produtos',
+                linkBotao: '#produtos',
+                corBotao: '#FF6B00'
+            }
+        ],
+
+        rodape: {
+            subtitulo: 'VAMOS CONVERSAR?',
+            links: [
+                {
+                    nome: 'E-mail',
+                    informacao: 'oi@gabrielcamisetas.com'
+                },
+                {
+                    nome: 'Telefone',
+                    informacao: '(11) 99876-2210'
+                },
+                {
+                    nome: 'Localização',
+                    informacao: 'São Paulo, SP'
+                }
+            ]
         }
-    ];
+    };
 
-    cardsCarrossel = [
-        {
-            subtitulo: '',
-            titulo: '',
-            descricao: '',
-            imagem: '',
-            textoBotao: '',
-            linkBotao: '',
-            corBotao: '#FF6B00'
+    constructor(private siteService: SiteService) {}
+
+    ngOnInit() {
+        const siteSalvo = this.siteService.buscarSite();
+
+        if (siteSalvo) {
+            this.site = siteSalvo;
         }
-    ];
+    }
 
-    linksRodape = [
-        { nome: '', informacao: '' },
-        { nome: '', informacao: '' }
-    ];
+    salvarAlteracoes() {
+        this.siteService.salvarSite(this.site);
+        console.log('Site salvo:', this.site);
+    }
 
     adicionarLinkNavegacao() {
-        this.linksNavegacao.push({
+        this.site.linksNavegacao.push({
             nome: '',
             endereco: ''
         });
     }
 
     removerLinkNavegacao(index: number) {
-        this.linksNavegacao.splice(index, 1);
+        this.site.linksNavegacao.splice(index, 1);
     }
 
     adicionarProduto() {
-        this.produtos.push({
+        this.site.produtos.push({
             titulo: '',
             descricao: '',
             preco: '',
@@ -66,11 +134,11 @@ export class EditarSite {
     }
 
     removerProduto(index: number) {
-        this.produtos.splice(index, 1);
+        this.site.produtos.splice(index, 1);
     }
 
     adicionarCardCarrossel() {
-        this.cardsCarrossel.push({
+        this.site.cardsCarrossel.push({
             subtitulo: '',
             titulo: '',
             descricao: '',
@@ -82,17 +150,17 @@ export class EditarSite {
     }
 
     removerCardCarrossel(index: number) {
-        this.cardsCarrossel.splice(index, 1);
+        this.site.cardsCarrossel.splice(index, 1);
     }
 
     adicionarLinkRodape() {
-        this.linksRodape.push({
+        this.site.rodape.links.push({
             nome: '',
             informacao: ''
         });
     }
 
     removerLinkRodape(index: number) {
-        this.linksRodape.splice(index, 1);
+        this.site.rodape.links.splice(index, 1);
     }
 }
