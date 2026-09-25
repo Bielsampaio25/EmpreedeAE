@@ -12,8 +12,8 @@
     display: flex;
     align-items: center;
     gap: 9px;
-    color: #71819a;
-    font-size: 13px;
+    color: #000000;
+    font-size: 15px;
     text-decoration: none;
     font-family: "Manrope", sans-serif;
 }
@@ -25,8 +25,8 @@
 }
 
 .link-cadastro {
-    color: #71819a;
-    font-size: 13px;
+    color: #000000;
+    font-size: 15px;
     font-family: "Manrope", sans-serif;
 }
 
@@ -72,8 +72,8 @@
 
 .subtitulo {
     margin-bottom: 23px;
-    color: #62718b;
-    font-size: 12px;
+    color: #000000;
+    font-size: 15px;
     font-weight: 500;
     letter-spacing: 1.5px;
     font-family: "Space Grotesk", sans-serif;
@@ -180,8 +180,8 @@
 }
 
 .opcao-termos label {
-    color: #71819a;
-    font-size: 12px;
+    color: #000000;
+    font-size: 15px;
     line-height: 19px;
     cursor: pointer;
     font-family: "Manrope", sans-serif;
@@ -228,8 +228,8 @@
 
 .texto-privacidade {
     margin-top: 25px;
-    color: #8996a8;
-    font-size: 11px;
+    color: #000000;
+    font-size: 15px;
     line-height: 1.5;
     text-align: center;
     font-family: "Manrope", sans-serif;
